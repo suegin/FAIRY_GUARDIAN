@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 718255282}
   - component: {fileID: 718255281}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,13 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696d6f5c4f1bb5345a3bdf467442b769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectPrefab: {fileID: 0}
-  destroySound: {fileID: 0}
-  _strength: 10
-  Hp: 3
-  Power: 0
-  Player: {fileID: 0}
-  speed: 0.0005
 --- !u!212 &718255279
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -351,7 +344,7 @@ GameObject:
   - component: {fileID: 803496740}
   - component: {fileID: 803496739}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -436,13 +429,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696d6f5c4f1bb5345a3bdf467442b769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectPrefab: {fileID: 0}
-  destroySound: {fileID: 0}
-  _strength: 10
-  Hp: 5
-  Power: 500
-  Player: {fileID: 0}
-  speed: 0.0005
 --- !u!58 &803496739
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -695,7 +681,7 @@ GameObject:
   - component: {fileID: 1127916289}
   - component: {fileID: 1127916288}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -713,13 +699,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696d6f5c4f1bb5345a3bdf467442b769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectPrefab: {fileID: 0}
-  destroySound: {fileID: 0}
-  _strength: 10
-  Hp: 4
-  Power: 0
-  Player: {fileID: 0}
-  speed: 0.0005
 --- !u!212 &1127916286
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1026,7 +1005,7 @@ GameObject:
   - component: {fileID: 1874936768}
   - component: {fileID: 1874936767}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1111,13 +1090,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696d6f5c4f1bb5345a3bdf467442b769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectPrefab: {fileID: 0}
-  destroySound: {fileID: 0}
-  _strength: 10
-  Hp: 6
-  Power: 0
-  Player: {fileID: 0}
-  speed: 0.0005
 --- !u!58 &1874936767
 CircleCollider2D:
   m_ObjectHideFlags: 0
