@@ -11,7 +11,7 @@ public class player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            _strength += 0.5f;
+            _strength += 5.0f;
         }
     }
 
