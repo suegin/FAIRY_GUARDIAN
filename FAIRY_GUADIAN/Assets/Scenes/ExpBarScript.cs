@@ -8,11 +8,14 @@ public class ExpBarScript : MonoBehaviour
     // ç≈èâÇÃåoå±ílè„å¿
     int maxexp = 1000;
     int nowexp = 0;
+    LevelDirector levelDirector;
     public Slider expBar;
+    public GameObject level;
     // Start is called before the first frame update
     void Start()
     {
         expBar = GetComponent<Slider>();
+        levelDirector = level.GetComponent<LevelDirector>();  
     }
 
     // Update is called once per frame
@@ -20,6 +23,7 @@ public class ExpBarScript : MonoBehaviour
     {
         expBar.value = nowexp;
         expBar.maxValue = maxexp;
+        
 
         if (Input.GetKeyDown(KeyCode.Space)) 
         { 
@@ -31,6 +35,7 @@ public class ExpBarScript : MonoBehaviour
         {
             nowexp = nowexp - maxexp;
             maxexp += 200;
+            levelDirector.level += 1;
         }
     }
 }
