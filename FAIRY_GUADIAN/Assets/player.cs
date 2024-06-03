@@ -6,13 +6,10 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
     // Start is called before the first frame update
-    float _strength = 1.0f;
+    
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            _strength += 5.0f;
-        }
+       
     }
 
     // Update is called once per frame
