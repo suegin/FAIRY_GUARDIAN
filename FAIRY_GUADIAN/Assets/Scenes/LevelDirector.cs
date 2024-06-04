@@ -17,6 +17,7 @@ public class LevelDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // ƒŒƒxƒ‹‚ð•\Ž¦
         levelText.text = "level:" + level;
     }
 }
