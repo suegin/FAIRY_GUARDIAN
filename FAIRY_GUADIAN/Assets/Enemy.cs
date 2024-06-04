@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         // 時間間隔を決定する
-        interval = GetRandomTime();
+        //interval = GetRandomTime();
         // Fairyを追跡
         Player = GameObject.Find("Player");       
     }
@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
             // 経過時間を初期化して再度時間計測を始める
             time = 0f;
             // 次に発生する時間間隔を決定する
-            interval = GetRandomTime();
+            //interval = GetRandomTime();
         }
 
 
