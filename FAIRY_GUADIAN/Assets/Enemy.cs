@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
         //interval = GetRandomTime();
 >>>>>>> Stashed changes
         // Fairy‚ğ’ÇÕ
-        Player = GameObject.Find("Barrier");       
+        Player = GameObject.Find("player");       
     }
 
     // Update is called once per frame
