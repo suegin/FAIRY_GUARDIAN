@@ -4,45 +4,43 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class player : MonoBehaviour
-{
+{  
     // Start is called before the first frame update
+
     public Collider2D HIT;
     int timer;
     private void Start()
     {
-        HIT.enabled = false;  // Box Collider2D‚ğ–³Œø‚É‚·‚é
+        HIT.enabled = false;  // Box Collider2Dã‚’ç„¡åŠ¹ã«ã™ã‚‹
         timer = 0;
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            HIT.enabled = true;  // Box Collider2D‚ğ—LŒø‚É‚·‚é
-
+            HIT.enabled = true;  // Box Collider2Dã‚’æœ‰åŠ¹ã«ã™ã‚‹
         }
     }
     private void FixedUpdate()
     {
-        if(HIT.enabled == true)  // Box Collider2D‚ª—LŒø‚Ì @
+        if(HIT.enabled == true)  // Box Collider2DãŒæœ‰åŠ¹ã®æ™‚ ã€€
         {
-            timer++;        // timer‚ğƒJƒEƒ“ƒg‚·‚é
+            timer++;        // timerã‚’ã‚«ã‚¦ãƒ³ãƒˆã™ã‚‹
         }
         if (timer > 30)
         {
-            timer = 0;      // timer‚ğ0‚É–ß‚·
-            HIT.enabled = false;@@// Box Collider2D‚ğ–³Œø‚É‚·‚é
+            timer = 0;      // timerã‚’0ã«æˆ»ã™
+            HIT.enabled = false;ã€€ã€€// Box Collider2Dã‚’ç„¡åŠ¹ã«ã™ã‚‹
         }
     }
+
     // Update is called once per frame
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+       if(collision.gameObject.tag=="Enemy")
         {
             Debug.Log("1damage");
-            HIT.enabled = false;@@// Box Collider2D‚ğ–³Œø‰»‚·‚é
+            HIT.enabled = false;    // Box Collider2Dã‚’ç„¡åŠ¹ã«ã™ã‚‹
         }
-            
-       
-        
     }
 }

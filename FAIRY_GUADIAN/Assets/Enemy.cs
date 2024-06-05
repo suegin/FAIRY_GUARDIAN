@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    //// “GƒvƒŒƒnƒu
+    //// æ•µãƒ—ãƒ¬ãƒãƒ–
     //public GameObject Enemy1Prefab;
-    // ŠÔŠÔŠu‚ÌÅ¬’l
-    public float minTime = 2f;
-    // ŠÔŠÔŠu‚ÌÅ‘å’l
-    public float maxTime = 2f;
-    // “G¶¬ŠÔŠÔŠu
-    private float interval;
-    // Œo‰ßŠÔ
-    private float time = 0f;
+    //// æ™‚é–“é–“éš”ã®æœ€å°å€¤
+    //public float minTime = 2f;
+    //// æ™‚é–“é–“éš”ã®æœ€å¤§å€¤
+    //public float maxTime = 5f;
+    //// æ•µç”Ÿæˆæ™‚é–“é–“éš”
+    //private float interval;
+    //// çµŒéæ™‚é–“
+    //private float time = 0f;
     GameObject Player;
 
     float speed = 0.005f;
@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // ŠÔŠÔŠu‚ğŒˆ’è‚·‚é
+        // æ™‚é–“é–“éš”ã‚’æ±ºå®šã™ã‚‹
 
         //interval = GetRandomTime();
 
@@ -29,42 +29,43 @@ public class Enemy : MonoBehaviour
 
         //interval = GetRandomTime();
 
-        // Fairy‚ğ’ÇÕ
-        Player = GameObject.Find("Barrier");       
+        // Fairyã‚’è¿½è·¡
+        Player = GameObject.Find("Player");       
     }
 
     // Update is called once per frame
     void Update()
     {
-        // ŠÔŒv‘ª
-        time += Time.deltaTime;
+        //// æ™‚é–“è¨ˆæ¸¬
+        //time += Time.deltaTime;
 
-        // Œo‰ßŠÔ‚ª¶¬ŠÔ‚É‚È‚Á‚½‚Æ‚«(¶¬ŠÔ‚æ‚è‘å‚«‚­‚È‚Á‚½)
+        // çµŒéæ™‚é–“ãŒç”Ÿæˆæ™‚é–“ã«ãªã£ãŸã¨ã(ç”Ÿæˆæ™‚é–“ã‚ˆã‚Šå¤§ãããªã£ãŸæ™‚)
         if (time > interval)
         {
 
-            // Enemy‚ğƒCƒ“ƒXƒ^ƒ“ƒX‰»‚·‚é(¶¬‚·‚é)
+            // Enemyã‚’ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–ã™ã‚‹(ç”Ÿæˆã™ã‚‹)
             //GameObject Enemy1 = Instantiate(Enemy1Prefab);
-            // ¶¬‚µ‚½“G‚ÌÀ•W‚ğŒˆ’è‚·‚é
+            // ç”Ÿæˆã—ãŸæ•µã®åº§æ¨™ã‚’æ±ºå®šã™ã‚‹
             //Enemy1.transform.position = new Vector3(-4.61f, -0.49f, 0);
-            // Œo‰ßŠÔ‚ğ‰Šú‰»‚µ‚ÄÄ“xŠÔŒv‘ª‚ğn‚ß‚é
+            // çµŒéæ™‚é–“ã‚’åˆæœŸåŒ–ã—ã¦å†åº¦æ™‚é–“è¨ˆæ¸¬ã‚’å§‹ã‚ã‚‹
             time = 0f;
-            // Ÿ‚É”­¶‚·‚éŠÔŠÔŠu‚ğŒˆ’è‚·‚é
+            // æ¬¡ã«ç™ºç”Ÿã™ã‚‹æ™‚é–“é–“éš”ã‚’æ±ºå®šã™ã‚‹
             //interval = GetRandomTime();
-            //// Enemy‚ğƒCƒ“ƒXƒ^ƒ“ƒX‰»‚·‚é(¶¬‚·‚é)
+            //// Enemyã‚’ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–ã™ã‚‹(ç”Ÿæˆã™ã‚‹)
             //GameObject Enemy1 = Instantiate(Enemy1Prefab);
-            //// ¶¬‚µ‚½“G‚ÌÀ•W‚ğŒˆ’è‚·‚é
+            //// ç”Ÿæˆã—ãŸæ•µã®åº§æ¨™ã‚’æ±ºå®šã™ã‚‹
             //Enemy1.transform.position = new Vector3(-4.61f, -0.49f, 0);
-            //// Œo‰ßŠÔ‚ğ‰Šú‰»‚µ‚ÄÄ“xŠÔŒv‘ª‚ğn‚ß‚é
+            //// çµŒéæ™‚é–“ã‚’åˆæœŸåŒ–ã—ã¦å†åº¦æ™‚é–“è¨ˆæ¸¬ã‚’å§‹ã‚ã‚‹
             //time = 0f;
-            //// Ÿ‚É”­¶‚·‚éŠÔŠÔŠu‚ğŒˆ’è‚·‚é
+            //// æ¬¡ã«ç™ºç”Ÿã™ã‚‹æ™‚é–“é–“éš”ã‚’æ±ºå®šã™ã‚‹
             //// interval = GetRandomTime();
 
         }
 
 
 
-        // Enemy‚ªFairy‚ğ’ÇÕ‚·‚é
+
+        // EnemyãŒFairyã‚’è¿½è·¡ã™ã‚‹
         float b = Player.transform.position.x - transform.position.x;
         float c = (Player.transform.position.y - transform.position.y);
             
