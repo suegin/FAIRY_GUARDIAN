@@ -10,7 +10,7 @@ public class player : MonoBehaviour
     int timer;
     private void Start()
     {
-        HIT.enabled = false;  // Box Collider2Dを無効化する
+        HIT.enabled = false;  // Box Collider2Dを無効にする
         timer = 0;
     }
     private void Update()
@@ -30,7 +30,7 @@ public class player : MonoBehaviour
         if (timer > 30)
         {
             timer = 0;      // timerを0に戻す
-            HIT.enabled = false;　　// Box Collider2Dを無効化する
+            HIT.enabled = false;　　// Box Collider2Dを無効にする
         }
     }
     // Update is called once per frame

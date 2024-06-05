@@ -22,15 +22,13 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         // 時間間隔を決定する
-<<<<<<< Updated upstream
-<<<<<<< HEAD
+
         //interval = GetRandomTime();
-=======
+
         // interval = GetRandomTime();
->>>>>>> c1622b11c64bad1a48069aeef5963c22437d07f7
-=======
+
         //interval = GetRandomTime();
->>>>>>> Stashed changes
+
         // Fairyを追跡
         Player = GameObject.Find("Barrier");       
     }
@@ -44,17 +42,15 @@ public class Enemy : MonoBehaviour
         // 経過時間が生成時間になったとき(生成時間より大きくなった時)
         if (time > interval)
         {
-<<<<<<< HEAD
+
             // Enemyをインスタンス化する(生成する)
-            GameObject Enemy1 = Instantiate(Enemy1Prefab);
+            //GameObject Enemy1 = Instantiate(Enemy1Prefab);
             // 生成した敵の座標を決定する
-            Enemy1.transform.position = new Vector3(-4.61f, -0.49f, 0);
+            //Enemy1.transform.position = new Vector3(-4.61f, -0.49f, 0);
             // 経過時間を初期化して再度時間計測を始める
             time = 0f;
             // 次に発生する時間間隔を決定する
             //interval = GetRandomTime();
-<<<<<<< Updated upstream
-=======
             //// Enemyをインスタンス化する(生成する)
             //GameObject Enemy1 = Instantiate(Enemy1Prefab);
             //// 生成した敵の座標を決定する
@@ -63,9 +59,7 @@ public class Enemy : MonoBehaviour
             //time = 0f;
             //// 次に発生する時間間隔を決定する
             //// interval = GetRandomTime();
->>>>>>> c1622b11c64bad1a48069aeef5963c22437d07f7
-=======
->>>>>>> Stashed changes
+
         }
 
 
