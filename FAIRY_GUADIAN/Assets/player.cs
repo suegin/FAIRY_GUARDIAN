@@ -41,7 +41,7 @@ public class player : MonoBehaviour
             Debug.Log("1damage");
             HIT.enabled = false;@@// Box Collider2D‚ğ–³Œø‰»‚·‚é
         }
-            
+            //  
        
         
     }
