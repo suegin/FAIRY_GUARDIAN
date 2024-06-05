@@ -4,68 +4,43 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class player : MonoBehaviour
-{
-
-    int _strength = 1;
-    float AddSpeed = 1;
-    Rigidbody2D rigid2D;
-   
+{  
     // Start is called before the first frame update
 
+    public Collider2D HIT;
+    int timer;
+    private void Start()
+    {
+        HIT.enabled = false;  // Box Collider2Dã‚’ç„¡åŠ¹ã«ã™ã‚‹
+        timer = 0;
+    }
     private void Update()
     {
-        Application.targetFrameRate = 60;
-        this.rigid2D = GetComponent<Rigidbody2D>();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            HIT.enabled = true;  // Box Collider2Dã‚’æœ‰åŠ¹ã«ã™ã‚‹
+        }
+    }
+    private void FixedUpdate()
+    {
+        if(HIT.enabled == true)  // Box Collider2DãŒæœ‰åŠ¹ã®æ™‚ ã€€
+        {
+            timer++;        // timerã‚’ã‚«ã‚¦ãƒ³ãƒˆã™ã‚‹
+        }
+        if (timer > 30)
+        {
+            timer = 0;      // timerã‚’0ã«æˆ»ã™
+            HIT.enabled = false;ã€€ã€€// Box Collider2Dã‚’ç„¡åŠ¹ã«ã™ã‚‹
+        }
     }
 
     // Update is called once per frame
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-       
        if(collision.gameObject.tag=="Enemy")
         {
             Debug.Log("1damage");
-            float x = Input.GetAxisRaw("Horizontal"); // ƒfƒtƒHƒ‹ƒg‚ª‰EŒü‚«‚Ì‰æ‘œ‚Ìê‡
-            Vector3 scale = transform.localScale; // ƒXƒP[ƒ‹’læ‚èo‚µ
-                                                  // ©‚ª‰Ÿ‚³‚ê‚½
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                transform.Translate(-0.07f, 0, 0); // ¶‚É1“®‚©‚·
-                scale.x = -1; // ”½“]‚·‚éi¶Œü‚«j
-
-            }
-            transform.localScale = scale; // ‘ã“ü‚µ’¼‚·
-
-            // ¨‚ª‰Ÿ‚³‚ê‚½
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-
-                transform.Translate(0.07f, 0, 0); // ‰E‚É1“®‚©‚·
-                scale.x = 1; // ‚»‚Ì‚Ü‚Üi‰EŒü‚«j
-            }
-            transform.localScale = scale; // ‘ã“ü‚µ’¼‚·
-
-            // ª‚ª‰Ÿ‚³‚ê‚½
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                transform.Translate(0, 0.07f, 0); // ã‚É1“®‚©‚·
-            }
-
-            // «‚ª‰Ÿ‚³‚ê‚½
-            if (Input.GetKey(KeyCode.DownArrow))
-            {
-                transform.Translate(0, -0.07f, 0); // ‰º‚É1“®‚©‚·
-            }
-
-            // Q‚ª‰Ÿ‚³‚ê‚½
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                _strength += 5;     // UŒ‚—Í‚ª5ã‚ª‚é
-                AddSpeed += 2f;      // ‘¬“x‚ª5ã‚ª‚é
-            }
-
-
-
+            HIT.enabled = false;    // Box Collider2Dã‚’ç„¡åŠ¹ã«ã™ã‚‹
         }
     }
 }
