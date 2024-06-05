@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class ExpBarScript : MonoBehaviour
 {
-    // 最初の経験値上限
+    // 最初の必要経験値
     int maxexp = 1000;
+    // 現在の経験値量
     int nowexp = 0;
+
     LevelDirector levelDirector;
     public Slider expBar;
     public GameObject level;
@@ -24,17 +26,21 @@ public class ExpBarScript : MonoBehaviour
         expBar.value = nowexp;
         expBar.maxValue = maxexp;
         
-
+        // 経験値獲得条件
         if (Input.GetKeyDown(KeyCode.Space)) 
         { 
+            // 経験値を獲得
             nowexp += 150;
         }
 
-        // 経験値が上限を上回ったら
+        // 必要経験値量手に入れたら
         if (nowexp >= maxexp)
         {
+            // 経験値超過分を適用する
             nowexp = nowexp - maxexp;
+            // 必要経験値を上げる
             maxexp += 200;
+            // レベルが1上がる
             levelDirector.level += 1;
         }
     }
