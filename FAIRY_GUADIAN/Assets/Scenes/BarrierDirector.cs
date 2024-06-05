@@ -14,15 +14,19 @@ public class BarrierDirector : MonoBehaviour
 
     bool enemyHit = false;
 
+    GameObject Enemy;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Enemy = GameObject.Find("enemy");
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Enemy‚ÆÚG‚µ‚½‚ç
+        
         
 
         // ‘Ï‹v’l‚ª‚È‚­‚È‚Á‚½‚ç
@@ -30,10 +34,5 @@ public class BarrierDirector : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    public void Damage()
-    {
-        hp--;
     }
 }
