@@ -153,7 +153,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 718255277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 696d6f5c4f1bb5345a3bdf467442b769, type: 3}
+  m_Script: {fileID: 11500000, guid: d20036124a3de034faefa7483dda6c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &718255279
@@ -429,6 +429,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696d6f5c4f1bb5345a3bdf467442b769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  speed: 0.005
 --- !u!58 &803496739
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -699,6 +701,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696d6f5c4f1bb5345a3bdf467442b769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  speed: 0.005
 --- !u!212 &1127916286
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -962,8 +966,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5425cfaeab322c419106583e484a97c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyScript: {fileID: 0}
-  speed: 5
 --- !u!50 &1287423193
 Rigidbody2D:
   serializedVersion: 4
@@ -1090,6 +1092,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696d6f5c4f1bb5345a3bdf467442b769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  speed: 0.005
 --- !u!58 &1874936767
 CircleCollider2D:
   m_ObjectHideFlags: 0
