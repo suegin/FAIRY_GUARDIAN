@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
         // ←が押された時
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Translate(-0.07f  , 0, 0); // 左に1動かす
+            transform.Translate(-0.07f * AddSpeed, 0, 0); // 左に1動かす
             scale.x = -1; // 反転する（左向き）
 
         }
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             
-            transform.Translate(0.07f , 0, 0); // 右に1動かす
+            transform.Translate(0.07f * AddSpeed, 0, 0); // 右に1動かす
             scale.x = 1; // そのまま（右向き）
         }
         transform.localScale = scale; // 代入し直す
@@ -41,24 +41,33 @@ public class PlayerController : MonoBehaviour
         // ↑が押された時
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.Translate(0, 0.07f , 0); // 上に1動かす
+            transform.Translate(0, 0.07f * AddSpeed, 0); // 上に1動かす
         }
 
         // ↓が押された時
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.Translate(0, -0.07f , 0); // 下に1動かす
+            transform.Translate(0, -0.07f * AddSpeed, 0); // 下に1動かす
         }
 
         // Qが押された時
         if (Input.GetKeyDown(KeyCode.Q))
         {
             _strength += 5;     // 攻撃力が5上がる
-            AddSpeed += 2f;      // 速度が5上がる
+            AddSpeed += 1.2f;      // 速度が1.2上がる
         }
 
+        // Wが押された時
+        if(Input.GetKeyDown(KeyCode.W)) 
+        { 
+                                                //  半径3.5の円形の攻撃範囲
+              
 
+        }
 
     }
+   
 }
+
+
 

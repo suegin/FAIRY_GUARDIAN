@@ -22,11 +22,15 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         // ŠÔŠÔŠu‚ğŒˆ’è‚·‚é
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         //interval = GetRandomTime();
 =======
         // interval = GetRandomTime();
 >>>>>>> c1622b11c64bad1a48069aeef5963c22437d07f7
+=======
+        //interval = GetRandomTime();
+>>>>>>> Stashed changes
         // Fairy‚ğ’ÇÕ
         Player = GameObject.Find("Barrier");       
     }
@@ -49,6 +53,7 @@ public class Enemy : MonoBehaviour
             time = 0f;
             // Ÿ‚É”­¶‚·‚éŠÔŠÔŠu‚ğŒˆ’è‚·‚é
             //interval = GetRandomTime();
+<<<<<<< Updated upstream
 =======
             //// Enemy‚ğƒCƒ“ƒXƒ^ƒ“ƒX‰»‚·‚é(¶¬‚·‚é)
             //GameObject Enemy1 = Instantiate(Enemy1Prefab);
@@ -59,6 +64,8 @@ public class Enemy : MonoBehaviour
             //// Ÿ‚É”­¶‚·‚éŠÔŠÔŠu‚ğŒˆ’è‚·‚é
             //// interval = GetRandomTime();
 >>>>>>> c1622b11c64bad1a48069aeef5963c22437d07f7
+=======
+>>>>>>> Stashed changes
         }
 
 
