@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         // W‚ª‰Ÿ‚³‚ê‚½
         if(Input.GetKeyDown(KeyCode.W)) 
         { 
-                                                //  ”¼Œa3.5‚Ì‰~Œ`‚ÌUŒ‚”ÍˆÍ
+                                                //  
               
 
         }
