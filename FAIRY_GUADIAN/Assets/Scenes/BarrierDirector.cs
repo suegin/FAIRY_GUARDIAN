@@ -6,13 +6,11 @@ using UnityEngine;
 public class BarrierDirector : MonoBehaviour
 {
     // バリアの耐久値
-    private int hp = 15;
+    private int barrierHp = 100;
     // 一度ダメージを食らったら一定時間ダメージを食らわないようにする
     private float damageCoolTime = 0f;
     // ダメージ量
     private int damage = 1;
-
-    bool enemyHit = false;
 
     GameObject Enemy;
 
@@ -25,14 +23,20 @@ public class BarrierDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Enemyと接触したら
-        
-        
-
         // 耐久値がなくなったら
-        if (hp <= 0)
+        if (barrierHp <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    // Enemyと接触したら
+    void OnTriggerEnter2D(Collider2D Other)
+    {
+        if(Other.CompareTag("Enemy"))
+        {
+            Debug.Log("ダメージ！");
+            barrierHp -= damage;
         }
     }
 }
