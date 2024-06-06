@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 718255283}
   - component: {fileID: 718255282}
   - component: {fileID: 718255281}
+  - component: {fileID: 718255284}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -196,7 +197,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -330,6 +331,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &718255284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718255277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45a8df97e9a686648bacfd21a6bcc332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHp: 5
 --- !u!1 &803496735
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,8 +443,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696d6f5c4f1bb5345a3bdf467442b769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  speed: 0.005
 --- !u!58 &803496739
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -503,9 +515,10 @@ GameObject:
   m_Component:
   - component: {fileID: 849771133}
   - component: {fileID: 849771132}
+  - component: {fileID: 849771134}
   m_Layer: 0
   m_Name: Fairy
-  m_TagString: Untagged
+  m_TagString: Fairy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -577,6 +590,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &849771134
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849771131}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1127884249
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,8 +741,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696d6f5c4f1bb5345a3bdf467442b769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  speed: 0.005
 --- !u!212 &1127916286
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -845,9 +883,10 @@ GameObject:
   - component: {fileID: 1287423192}
   - component: {fileID: 1287423188}
   - component: {fileID: 1287423193}
+  - component: {fileID: 1287423194}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Enemy
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -993,6 +1032,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1287423194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287423187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b629cfe0eb74b459ab101eb7b26b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HIT: {fileID: 1287423188}
 --- !u!1 &1874936763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,8 +1144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696d6f5c4f1bb5345a3bdf467442b769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  speed: 0.005
 --- !u!58 &1874936767
 CircleCollider2D:
   m_ObjectHideFlags: 0
