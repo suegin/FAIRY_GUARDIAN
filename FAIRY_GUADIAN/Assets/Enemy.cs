@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
         //time += Time.deltaTime;
 
         // 経過時間が生成時間になったとき(生成時間より大きくなった時)
-        if (time > interval)
+        //if (time > interval)
         {
 
             // Enemyをインスタンス化する(生成する)
@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
             // 生成した敵の座標を決定する
             //Enemy1.transform.position = new Vector3(-4.61f, -0.49f, 0);
             // 経過時間を初期化して再度時間計測を始める
-            time = 0f;
+          //  time = 0f;
             // 次に発生する時間間隔を決定する
             //interval = GetRandomTime();
             //// Enemyをインスタンス化する(生成する)
