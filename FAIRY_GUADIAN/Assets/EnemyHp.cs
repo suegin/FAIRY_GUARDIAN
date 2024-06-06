@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHp : MonoBehaviour
 {
-    int Hp = 5;
+    public int enemyHp = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,7 @@ public class EnemyHp : MonoBehaviour
     void Update()
     {
         
-        if (Hp < 0)
+        if (enemyHp < 0)
         {
             this.gameObject.SetActive(false);
         }
