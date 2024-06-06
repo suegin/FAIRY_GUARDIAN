@@ -4,14 +4,15 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class player : MonoBehaviour
-{  
+{
     // Start is called before the first frame update
-
+    EnemyHp _eneHp;
     public Collider2D HIT;
     int timer;
     private void Start()
     {
         HIT.enabled = false;  // Box Collider2Dを無効にする
+        _eneHp = GameObject.Find("Enemy1").GetComponent<EnemyHp>();
         timer = 0;
     }
     private void Update()
@@ -35,11 +36,11 @@ public class player : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void OnTriggerStay2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
        if(collision.gameObject.tag=="Enemy")
         {
-            Debug.Log("1damage");
+            _eneHp.enemyHp -= 1;
             HIT.enabled = false;    // Box Collider2Dを無効にする
         }
     }
