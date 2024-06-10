@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
   
     GameObject Player;
 
-    float speed = 0.002f;
+    float speed = 0.010f;
 
     // Start is called before the first frame update
     void Start()
