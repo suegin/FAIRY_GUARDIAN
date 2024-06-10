@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
   
-    GameObject Fairy;
+    GameObject Barrier;
 
     float speed = 0.005f;
 
@@ -14,25 +14,25 @@ public class Enemy : MonoBehaviour
     {
 
         // FairyÇí«ê’
-        Fairy = GameObject.Find("Fairy");
+        Barrier = GameObject.Find("Fairy");
     }
 
     // Update is called once per frame
     void Update()
     {
         // EnemyÇ™FairyÇí«ê’Ç∑ÇÈ
-        float b = Fairy.transform.position.x - transform.position.x;
-        float c = (Fairy.transform.position.y - transform.position.y);
+        float b = Barrier.transform.position.x - transform.position.x;
+        float c = (Barrier.transform.position.y - transform.position.y);
 
         float dis = (b * b + c * c);
         float a = Mathf.Sqrt(dis);
-        float x = Fairy.transform.position.x - transform.position.x;
+        float x = Barrier.transform.position.x - transform.position.x;
         x = x / a * speed;
-        float y = Fairy.transform.position.y - transform.position.y;
+        float y = Barrier.transform.position.y - transform.position.y;
         y = y / a * speed;
         transform.position += new Vector3(x, y, transform.position.z);
 
-        Debug.Log(Fairy.transform.position);
+        Debug.Log(Barrier.transform.position);
 
 
     }
