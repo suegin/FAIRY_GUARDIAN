@@ -5,7 +5,11 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
   
+
+    GameObject Barrier;
+
     GameObject Player;
+
 
     float speed = 0.002f;
 
@@ -13,14 +17,18 @@ public class Enemy : MonoBehaviour
     void Start()
     {
 
-        // Fairy��ǐ�
-        Player = GameObject.Find("Player");
+        // Fairy‚ð’ÇÕ
+
+        Barrier = GameObject.Find("Fairy");
+     Player = GameObject.Find("Player");
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Enemy��Fairy��ǐՂ���
+        // Enemy‚ªFairy‚ð’ÇÕ‚·‚é
+
         float b = Player.transform.position.x - transform.position.x;
         float c = (Player.transform.position.y - transform.position.y);
 
@@ -33,6 +41,7 @@ public class Enemy : MonoBehaviour
         transform.position += new Vector3(x, y, transform.position.z);
 
         // Debug.Log(Player.transform.position);
+
 
 
     }
