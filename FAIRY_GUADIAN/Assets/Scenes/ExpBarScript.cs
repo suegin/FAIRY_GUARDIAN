@@ -13,11 +13,13 @@ public class ExpBarScript : MonoBehaviour
     LevelDirector levelDirector;
     public Slider expBar;
     public GameObject level;
+    GameObject Enemy;
     // Start is called before the first frame update
     void Start()
     {
         expBar = GetComponent<Slider>();
-        levelDirector = level.GetComponent<LevelDirector>();  
+        levelDirector = level.GetComponent<LevelDirector>();
+        Enemy = GameObject.Find("Enemy");
     }
 
     // Update is called once per frame
