@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyHp : MonoBehaviour
@@ -8,11 +9,17 @@ public class EnemyHp : MonoBehaviour
     public int enemyHp = 5;
     // public Collider2D HIT;
     int timer;
+
+    ExpBarScript expBarScript;
+
     // Start is called before the first frame update
     void Start()
     {
         // HIT.enabled = false;
         // timer = 0;
+
+        expBarScript = GameObject.Find("exp").GetComponent<ExpBarScript>();
+
     }
 
     // Update is called once per frame
@@ -26,6 +33,7 @@ public class EnemyHp : MonoBehaviour
         //}
         if (enemyHp <= 0)
         {
+            expBarScript.nowexp += 150;
             this.gameObject.SetActive(false);
         }
     }
