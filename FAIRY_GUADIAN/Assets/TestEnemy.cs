@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -34,14 +33,10 @@ public class Testenemy : MonoBehaviour
         float y = Barrier.transform.position.y - transform.position.y;
         y = y / a * speed;
         transform.position += new Vector3(x, y, transform.position.z);
+
+        // Debug.Log(Barrier.transform.position);
+
+
     }
 
-    //// ÉoÉäÉAÇ∆ê⁄êGÇµÇΩÇÁ
-    //void OnCollisionStay2D(Collision2D other)
-    //{
-    //    if (other.collider.CompareTag("Barrier"))
-    //    {
-            
-    //    }
-    //}
 }

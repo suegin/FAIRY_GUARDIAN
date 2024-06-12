@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
 using UnityEngine.SceneManagement;
 
 public class BarrierDirector : MonoBehaviour
 {
     // バリアの耐久値
-    public int barrierHp = 10000;
+    private int barrierHp = 300;
     // 一度ダメージを食らったら一定時間ダメージを食らわないようにする
     private float damageCoolTime = 0f;
     // ダメージ量
@@ -16,12 +15,12 @@ public class BarrierDirector : MonoBehaviour
 
     bool enemyHit = false;
 
-    GameObject Enemy = null;
+    GameObject Enemy;
 
     // Start is called before the first frame update
     void Start()
     {
-        Enemy = GameObject.Find("Enemy");
+        Enemy = GameObject.Find("enemy");
     }
 
     // Update is called once per frame
@@ -41,9 +40,9 @@ public class BarrierDirector : MonoBehaviour
     }
 
     // Enemyと接触したら
-    void OnCollisionStay2D(Collision2D other)
+    void OnTrigger2D(Collider2D other)
     {
-        if (other.collider.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy"))
         {
             barrierHp -= 1;
             Debug.Log("ダメージ！");
