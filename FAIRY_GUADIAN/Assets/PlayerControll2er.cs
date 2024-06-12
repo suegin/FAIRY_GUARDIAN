@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     int _strength = 1;
     float AddSpeed = 1;
     Rigidbody2D rigid2D;
+    float xLimit = 8.3f;
+    float yLimit = 4.3f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +31,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(-0.07f * AddSpeed, 0, 0); // ¶‚É1“®‚©‚·
             scale.x = -1; // ”½“]‚·‚éi¶Œü‚«j
-
+            
         }
         transform.localScale = scale; // ‘ã“ü‚µ’¼‚·
 
@@ -45,6 +48,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.Translate(0, 0.07f * AddSpeed, 0); // ã‚É1“®‚©‚·
+            
         }
 
         // «‚ª‰Ÿ‚³‚ê‚½
@@ -52,6 +56,11 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(0, -0.07f * AddSpeed, 0); // ‰º‚É1“®‚©‚·
         }
+
+        Vector3 playerPos = transform.position;
+        playerPos.x = Mathf.Clamp(playerPos.x, -xLimit, xLimit);
+        playerPos.y = Mathf.Clamp(playerPos.y, -4.7f, yLimit);
+        transform.position = playerPos;
 
         // Q‚ª‰Ÿ‚³‚ê‚½
         if (Input.GetKeyDown(KeyCode.Q))
