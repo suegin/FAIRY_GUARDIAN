@@ -38,10 +38,11 @@ public class player : MonoBehaviour
     // Update is called once per frame
     public void OnTriggerStay2D(Collider2D collision)
     {
-       //if(collision.gameObject.tag=="Enemy")
-       // {
-       //     _eneHp.enemyHp -= 1;
-       //     HIT.enabled = false;    // Box Collider2Dを無効にする
-       // }
+       if(collision.gameObject.tag=="Enemy")
+        {
+          // _eneHp.enemyHp -= 1;
+           // HIT.enabled = false;    // Box Collider2Dを無効にする
+            
+        }
     }
 }
