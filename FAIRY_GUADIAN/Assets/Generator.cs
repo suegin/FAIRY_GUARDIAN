@@ -5,8 +5,9 @@ using UnityEngine;
 public class Generator : MonoBehaviour
 {
     public GameObject enemy;
-    float span = 1.0f;
+    [SerializeField]float span = 1.0f;
     float delta = 0;
+    int num;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +18,29 @@ public class Generator : MonoBehaviour
     void Update()
     {
         this.delta += Time.deltaTime;
+
         if (this.delta > this.span)
         {
             this.delta = 0;
+            //エネミーの生成
             GameObject go = Instantiate(enemy);
-            int px = Random.Range(-6, 7);
-            go.transform.position = new Vector3(px, 7, 0);
+            //乱数の作成
+            int px = Random.Range(-12, 12);
+            int py = Random.Range(-14, 10);
+            //画面内で出現しようとしているかどうかの判定
+            bool isY = (py > -5 && py < 5);//x座標
+            bool isX = (px > -9 && px < 9);//y座標
+            //画面内で出現しようとした場合、外に出す。
+            if (isX && isY)
+            {
+                py = Random.Range(5,9);
+                px = Random.Range(-12, 12);
+            }
+
+            //出現位置の設定
+            go.transform.position = new Vector3(px, py, 0);
+            
         }
+        
     }
 }

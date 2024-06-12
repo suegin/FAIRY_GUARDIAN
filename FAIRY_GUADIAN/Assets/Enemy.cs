@@ -8,10 +8,10 @@ public class Enemy : MonoBehaviour
 
     GameObject Barrier;
 
-    GameObject Player;
+    GameObject Fairy;
 
 
-    float speed = 0.002f;
+    float speed = 0.005f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
         // Fairy‚ð’ÇÕ
 
         Barrier = GameObject.Find("Fairy");
-     Player = GameObject.Find("Player");
+     Fairy = GameObject.Find("Fairy");
 
     }
 
@@ -29,14 +29,14 @@ public class Enemy : MonoBehaviour
     {
         // Enemy‚ªFairy‚ð’ÇÕ‚·‚é
 
-        float b = Player.transform.position.x - transform.position.x;
-        float c = (Player.transform.position.y - transform.position.y);
+        float b = Fairy.transform.position.x - transform.position.x;
+        float c = (Fairy.transform.position.y - transform.position.y);
 
         float dis = (b * b + c * c);
         float a = Mathf.Sqrt(dis);
-        float x = Player.transform.position.x - transform.position.x;
+        float x = Fairy.transform.position.x - transform.position.x;
         x = x / a * speed;
-        float y = Player.transform.position.y - transform.position.y;
+        float y = Fairy.transform.position.y - transform.position.y;
         y = y / a * speed;
         transform.position += new Vector3(x, y, transform.position.z);
 

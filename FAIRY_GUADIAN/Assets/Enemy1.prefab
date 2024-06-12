@@ -220,4 +220,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a8df97e9a686648bacfd21a6bcc332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHp: 5
+  enemyHp: 1
