@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
+    private int count;
     int _strength = 1;
     float AddSpeed = 1;
     Rigidbody2D rigid2D;
@@ -13,6 +15,7 @@ public class PlayerController : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         this.rigid2D = GetComponent<Rigidbody2D>();
+        count = 0;
     }
 
     // Update is called once per frame
@@ -53,17 +56,17 @@ public class PlayerController : MonoBehaviour
         // Q‚ª‰Ÿ‚³‚ê‚½
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            _strength += 5;     // UŒ‚—Í‚ª5ã‚ª‚é
-            AddSpeed += 1.2f;      // ‘¬“x‚ª1.2ã‚ª‚é
+            if(count < 5)       // 5‰ñ‚Ü‚Å
+            {
+                _strength += 5;     // UŒ‚—Í‚ª5ã‚ª‚é
+                AddSpeed += 1.2f;      // ‘¬“x‚ª1.2ã‚ª‚é
+                count += 1;
+                Debug.Log(count);
+            }
+            
         }
 
-        // W‚ª‰Ÿ‚³‚ê‚½
-        if(Input.GetKeyDown(KeyCode.W)) 
-        { 
-                                                //  
-              
-
-        }
+       
 
     }
    
