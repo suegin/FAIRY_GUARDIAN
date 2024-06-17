@@ -8,7 +8,7 @@ public class ExpBarScript : MonoBehaviour
     // 最初の必要経験値
     int maxexp = 1000;
     // 現在の経験値量
-    int nowexp = 0;
+    public int nowexp = 0;
 
     LevelDirector levelDirector;
     public Slider expBar;
@@ -26,12 +26,12 @@ public class ExpBarScript : MonoBehaviour
         expBar.value = nowexp;
         expBar.maxValue = maxexp;
         
-        // 経験値獲得条件
-        if (Input.GetKeyDown(KeyCode.Space)) 
-        { 
-            // 経験値を獲得
-            nowexp += 150;
-        }
+        //// 経験値獲得条件
+        //if (Input.GetKeyDown(KeyCode.Space)) 
+        //{ 
+        //    // 経験値を獲得
+        //    nowexp += 150;
+        //}
 
         // 必要経験値量手に入れたら
         if (nowexp >= maxexp)

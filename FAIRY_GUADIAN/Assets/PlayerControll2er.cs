@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(-0.07f * AddSpeed, 0, 0); // 左に1動かす
-            scale.x = -1; // 反転する（左向き）
+            scale.x = -0.1f; // 反転する（左向き）
             
         }
         transform.localScale = scale; // 代入し直す
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         {
             
             transform.Translate(0.07f * AddSpeed, 0, 0); // 右に1動かす
-            scale.x = 1; // そのまま（右向き）
+            scale.x = 0.1f; // そのまま（右向き）
         }
         transform.localScale = scale; // 代入し直す
 

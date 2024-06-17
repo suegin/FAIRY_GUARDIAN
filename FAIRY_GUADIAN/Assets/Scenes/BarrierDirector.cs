@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Data;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -40,12 +37,14 @@ public class BarrierDirector : MonoBehaviour
     }
 
     // Enemyと接触したら
-    void OnTrigger2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        //Debug.Log("ダメージ！");
+        if (other.gameObject.tag == "Enemy")
         {
             barrierHp -= 1;
             Debug.Log("ダメージ！");
         }
+            
     }
 }
