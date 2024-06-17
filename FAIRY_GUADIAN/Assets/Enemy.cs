@@ -16,9 +16,6 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        // Fairy‚ð’ÇÕ
-
         Barrier = GameObject.Find("Fairy");
      Fairy = GameObject.Find("Fairy");
 
@@ -27,8 +24,6 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Enemy‚ªFairy‚ð’ÇÕ‚·‚é
-
         float b = Fairy.transform.position.x - transform.position.x;
         float c = (Fairy.transform.position.y - transform.position.y);
 

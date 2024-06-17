@@ -49,13 +49,10 @@ public class EnemyHp : MonoBehaviour
         //    HIT.enabled = false;Å@Å@// Box Collider2DÇñ≥å¯Ç…Ç∑ÇÈ
         //}
     }
-    public void OnTriggerStay2D(Collider2D collision)
+    
+    public void OnTriggerStay2D(Collider2D Collider)
     {
-        
-    }
-    public void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
+        if (Collider.gameObject.tag == "Player")
         {
             enemyHp -= 1;
             Debug.Log(enemyHp);

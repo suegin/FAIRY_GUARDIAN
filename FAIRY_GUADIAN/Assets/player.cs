@@ -20,6 +20,7 @@ public class player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             HIT.enabled = true;  // Box Collider2Dを有効にする
+            Debug.Log("HIT");
         }
     }
     private void FixedUpdate()
