@@ -8,7 +8,7 @@ public class BarrierDirector : MonoBehaviour
     // 一度ダメージを食らったら一定時間ダメージを食らわないようにする
     private float damageCoolTime = 0f;
     // ダメージ量
-    private int damage = 1;
+    private int damage = 2;
 
     bool enemyHit = false;
 
