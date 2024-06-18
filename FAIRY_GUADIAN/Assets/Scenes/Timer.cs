@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Text))]
-public class ShowCountdown : MonoBehaviour
+public class Timer : MonoBehaviour
 {
     public const float m_fStartTime = 10;
     public string m_strFormat;
@@ -14,7 +14,8 @@ public class ShowCountdown : MonoBehaviour
     private void Start()
     {
         m_txt = GetComponent<Text>();
-        m_gameTimer = GameObject.Find("GameTimer").GetComponent<GameTimer>();
+        m_gameTimer = this.gameObject.GetComponent<GameTimer>();
+
     }
 
     private void FixedUpdate()
