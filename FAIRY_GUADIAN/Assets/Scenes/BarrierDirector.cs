@@ -4,13 +4,11 @@ using UnityEngine.SceneManagement;
 public class BarrierDirector : MonoBehaviour
 {
     // バリアの耐久値
-    private int barrierHp = 300;
-    // 一度ダメージを食らったら一定時間ダメージを食らわないようにする
-    private float damageCoolTime = 0f;
-    // ダメージ量
-    private int damage = 2;
-
-    bool enemyHit = false;
+    public int barrierHp = 300;
+    //// 一度ダメージを食らったら一定時間ダメージを食らわないようにする
+    //private float damageCoolTime = 0f;
+    //// ダメージ量
+    //private int damage = 2;
 
     GameObject Enemy;
 
@@ -36,10 +34,10 @@ public class BarrierDirector : MonoBehaviour
         
     }
 
-    // Enemyと接触したら
+    // Enemyと接触している間
     void OnTriggerStay2D(Collider2D other)
     {
-        //Debug.Log("ダメージ！");
+        // バリアの耐久値が減る
         if (other.gameObject.tag == "Enemy")
         {
             barrierHp -= 1;

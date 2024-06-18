@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -37,6 +38,16 @@ public class Testenemy : MonoBehaviour
         // Debug.Log(Barrier.transform.position);
 
 
+    }
+
+    // ƒoƒŠƒA‚ÆÚG‚µ‚Ä‚¢‚éŠÔ
+    void OnTriggerStay2D(Collider2D other)
+    {
+        // “®‚«‚ğ~‚ß‚é
+        if (other.gameObject.tag == "Barrier")
+        {
+            speed *= 0;
+        }
     }
 
 }
