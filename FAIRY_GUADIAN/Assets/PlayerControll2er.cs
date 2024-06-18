@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rigid2D;
     float xLimit = 8.3f;
     float yLimit = 4.3f;
+    BarrierDirector barrierDirector;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
         Application.targetFrameRate = 60;
         this.rigid2D = GetComponent<Rigidbody2D>();
         count = 0;
+        barrierDirector = GetComponent<BarrierDirector>();
     }
 
     // Update is called once per frame
@@ -75,7 +77,11 @@ public class PlayerController : MonoBehaviour
             
         }
 
-       
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            barrierDirector.barrierHp += 5;
+            Debug.Log(barrierDirector.barrierHp);
+        }
 
     }
    
