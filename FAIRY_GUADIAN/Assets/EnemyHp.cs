@@ -8,7 +8,7 @@ public class EnemyHp : MonoBehaviour
 {
     public int enemyHp = 5;
     // public Collider2D HIT;
-    int timer;
+    private int damageCoolTime = 0;
 
     ExpBarScript expBarScript;
 
@@ -54,9 +54,17 @@ public class EnemyHp : MonoBehaviour
     {
         if (Collider.gameObject.tag == "Player")
         {
-            enemyHp -= 1;
-            Debug.Log(enemyHp);
-            // HIT.enabled = false;    // Box Collider2D‚ð–³Œø‚É‚·‚é
+            damageCoolTime++;
+            if (damageCoolTime < 2)
+            {
+                enemyHp -= 1;
+                Debug.Log(enemyHp);
+                // HIT.enabled = false;    // Box Collider2D‚ð–³Œø‚É‚·‚é
+            }
+            else if (damageCoolTime > 250)
+            {
+                damageCoolTime = 0;
+            }
         }
 
     }

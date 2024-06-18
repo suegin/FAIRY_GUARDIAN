@@ -40,14 +40,13 @@ public class Testenemy : MonoBehaviour
 
     }
 
-    // ƒoƒŠƒA‚ÆÚG‚µ‚Ä‚¢‚éŠÔ
-    void OnTriggerStay2D(Collider2D other)
-    {
-        // “®‚«‚ğ~‚ß‚é
-        if (other.gameObject.tag == "Barrier")
-        {
-            speed *= 0;
-        }
-    }
-
+    //// ƒoƒŠƒA‚ÆÚG‚µ‚Ä‚¢‚éŠÔ
+    //void OnTriggerStay2D(Collider2D other)
+    //{
+    //    // “®‚«‚ğ~‚ß‚é
+    //    if (other.gameObject.tag == "Barrier")
+    //    {
+    //        speed *= 0;
+    //    }
+    //}
 }
