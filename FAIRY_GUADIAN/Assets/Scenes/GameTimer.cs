@@ -16,19 +16,5 @@ public class GameTimer : MonoBehaviour
             m_fTimer += Time.deltaTime;
         }
     }
-
-    public void OnStart()
-    {
-        m_bActive = true;
-    }
-    public void OnStop()
-    {
-        m_bActive = false;
-    }
-    public void OnReset()
-    {
-        m_fTimer = 0f;
-        OnStop();
-    }
-    // ‚ 
 }
+
