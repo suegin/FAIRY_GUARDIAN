@@ -21,6 +21,7 @@ public class player : MonoBehaviour
         {
             HIT.enabled = true;  // Box Collider2Dを有効にする
             Debug.Log("HIT");
+            
         }
     }
     private void FixedUpdate()
@@ -37,13 +38,27 @@ public class player : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void OnTriggerStay2D(Collider2D collision)
+    //public void OnTriggerStay2D(Collider2D collision)
+    //{
+    //   if(collision.gameObject.tag=="Enemy")
+    //    {
+
+    //        // _eneHp.enemyHp -= 1;
+    //        // HIT.enabled = false;    // Box Collider2Dを無効にする
+    //        Debug.Log("音が鳴る");
+    //        GetComponent<AudioSource>().Play();
+    //    }
+    //}
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-       if(collision.gameObject.tag=="Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
+
             // _eneHp.enemyHp -= 1;
-           // HIT.enabled = false;    // Box Collider2Dを無効にする
-            
+            // HIT.enabled = false;    // Box Collider2Dを無効にする
+            Debug.Log("音が鳴る");
+            GetComponent<AudioSource>().Play();
         }
     }
 }
