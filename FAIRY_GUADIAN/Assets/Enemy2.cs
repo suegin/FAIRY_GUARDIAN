@@ -2,23 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy1 : MonoBehaviour
+public class Enemy2 : MonoBehaviour
 {
-  
-
     GameObject Barrier;
 
     GameObject Fairy;
 
 
     float speed = 0.01f;
-
     // Start is called before the first frame update
     void Start()
     {
         Barrier = GameObject.Find("Barrier");
-     Fairy = GameObject.Find("Fairy");
-
+        Fairy = GameObject.Find("Fairy");
     }
 
     // Update is called once per frame
@@ -38,16 +34,13 @@ public class Enemy1 : MonoBehaviour
         // Debug.Log(Player.transform.position);
 
 
-
     }
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Barrier")
+        if (other.gameObject.tag == "Barrier")
         {
             speed = 0.000001f;
         }
     }
-
-
 }

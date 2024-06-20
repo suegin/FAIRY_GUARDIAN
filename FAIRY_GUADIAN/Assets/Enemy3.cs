@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy1 : MonoBehaviour
+public class Enemy3 : MonoBehaviour
 {
-  
+
 
     GameObject Barrier;
 
@@ -17,7 +17,7 @@ public class Enemy1 : MonoBehaviour
     void Start()
     {
         Barrier = GameObject.Find("Barrier");
-     Fairy = GameObject.Find("Fairy");
+        Fairy = GameObject.Find("Fairy");
 
     }
 
@@ -43,7 +43,7 @@ public class Enemy1 : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Barrier")
+        if (other.gameObject.tag == "Barrier")
         {
             speed = 0.000001f;
         }
