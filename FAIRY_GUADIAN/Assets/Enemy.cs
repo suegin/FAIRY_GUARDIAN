@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Enemy1 : MonoBehaviour
 {
-  
 
     GameObject Barrier;
 
     GameObject Fairy;
 
 
-    float speed = 0.01f;
+    float speed = 0.005f;
 
     // Start is called before the first frame update
     void Start()
