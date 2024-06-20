@@ -4,7 +4,7 @@ using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyHp : MonoBehaviour
+public class EnemyHp3 : MonoBehaviour
 {
     public int enemyHp = 3;
     // public Collider2D HIT;
@@ -27,10 +27,7 @@ public class EnemyHp : MonoBehaviour
     void Update()
     {
 
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    HIT.enabled = true;  // Box Collider2Dを有効にする
-        //}
+       
         if (enemyHp <= 0)
         {
             expBarScript.nowexp += 150;
@@ -39,17 +36,9 @@ public class EnemyHp : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //if (HIT.enabled == true)  // Box Collider2Dが有効の時 　
-        //{
-        //    timer++;        // timerをカウントする
-        //}
-        //if (timer > 30)
-        //{
-        //    timer = 0;      // timerを0に戻す
-        //    HIT.enabled = false;　　// Box Collider2Dを無効にする
-        //}
+      
     }
-    
+
     public void OnTriggerStay2D(Collider2D Collider)
     {
         if (Collider.gameObject.tag == "Player")
@@ -59,7 +48,7 @@ public class EnemyHp : MonoBehaviour
             {
                 enemyHp -= 1;
                 Debug.Log(enemyHp);
-                // HIT.enabled = false;    // Box Collider2Dを無効にする
+              
             }
             else if (damageCoolTime > 250)
             {
@@ -69,3 +58,4 @@ public class EnemyHp : MonoBehaviour
 
     }
 }
+
