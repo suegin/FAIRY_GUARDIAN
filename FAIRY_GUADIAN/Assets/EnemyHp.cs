@@ -61,7 +61,7 @@ public class EnemyHp : MonoBehaviour
                 Debug.Log(enemyHp);
                 // HIT.enabled = false;    // Box Collider2D‚ð–³Œø‚É‚·‚é
             }
-            else if (damageCoolTime > 250)
+            else if (damageCoolTime > 4)
             {
                 damageCoolTime = 0;
             }
