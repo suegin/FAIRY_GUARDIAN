@@ -9,6 +9,7 @@ public class player : MonoBehaviour
     EnemyHp _eneHp;
     public Collider2D HIT;
     int timer;
+    
     private void Start()
     {
         HIT.enabled = false;  // Box Collider2Dを無効にする
@@ -19,6 +20,7 @@ public class player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            
             HIT.enabled = true;  // Box Collider2Dを有効にする
             Debug.Log("HIT");
             
