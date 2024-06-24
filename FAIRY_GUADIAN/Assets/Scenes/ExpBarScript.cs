@@ -10,6 +10,9 @@ public class ExpBarScript : MonoBehaviour
     // 現在の経験値量
     public int nowexp = 0;
 
+    // プレイヤーの強化に必要とする値
+    public int enhance = 1;
+
     LevelDirector levelDirector;
     public Slider expBar;
     public GameObject level;
@@ -21,7 +24,7 @@ public class ExpBarScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         expBar.value = nowexp;
         expBar.maxValue = maxexp;
@@ -42,6 +45,8 @@ public class ExpBarScript : MonoBehaviour
             maxexp += 200;
             // レベルが1上がる
             levelDirector.level += 1;
+            // 強化するのに必要な値が1増える
+            enhance += 1;
         }
     }
 }
