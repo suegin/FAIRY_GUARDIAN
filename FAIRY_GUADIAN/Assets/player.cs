@@ -57,8 +57,8 @@ public class player : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
 
-            // _eneHp.enemyHp -= 1;
-            // HIT.enabled = false;    // Box Collider2Dを無効にする
+             // _eneHp.enemyHp -= 1;
+             // HIT.enabled = false;    // Box Collider2Dを無効にする
             Debug.Log("音が鳴る");
             GetComponent<AudioSource>().Play();
         }
