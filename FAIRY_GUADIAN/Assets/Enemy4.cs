@@ -1,31 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class Enemy2 : MonoBehaviour
+public class Enemy4 : MonoBehaviour
 {
-   
 
     GameObject Barrier;
 
     GameObject Fairy;
 
 
-    float speed = 0.01f;
+    float speed = 0.005f;
+
     // Start is called before the first frame update
     void Start()
     {
         Barrier = GameObject.Find("Barrier");
         Fairy = GameObject.Find("Fairy");
+
     }
 
     // Update is called once per frame
     void Update()
     {
-      
-
         float b = Fairy.transform.position.x - transform.position.x;
         float c = (Fairy.transform.position.y - transform.position.y);
 
@@ -35,15 +33,10 @@ public class Enemy2 : MonoBehaviour
         x = x / a * speed;
         float y = Fairy.transform.position.y - transform.position.y;
         y = y / a * speed;
-        if(a >= 5)
-        {
-            transform.position += new Vector3(x, y, transform.position.z);
-        }
-
-
-        
+        transform.position += new Vector3(x, y, transform.position.z);
 
         // Debug.Log(Player.transform.position);
+
 
 
     }
@@ -55,4 +48,6 @@ public class Enemy2 : MonoBehaviour
             speed = 0.000001f;
         }
     }
+
+
 }
