@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class PlayerController : MonoBehaviour
 {
     private int count;
-    public float _strength = 1;
+    public float strength = 1;
     float AddSpeed = 1;
     Rigidbody2D rigid2D;
     float xLimit = 8.3f;
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
         {
             if(count < 5)       // 5‰ñ‚Ü‚Å
             {
-                _strength += 5;     // UŒ‚—Í‚ª5ã‚ª‚é
+                strength += 5;     // UŒ‚—Í‚ª5ã‚ª‚é
                 AddSpeed += 1.2f;      // ‘¬“x‚ª1.2ã‚ª‚é
                 count += 1;
                 Debug.Log(count);
