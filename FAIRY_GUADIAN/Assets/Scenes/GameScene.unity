@@ -635,7 +635,7 @@ GameObject:
   - component: {fileID: 666189501}
   - component: {fileID: 666189500}
   m_Layer: 0
-  m_Name: "\u68EE"
+  m_Name: Follest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -737,6 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a7c571d843831d44bbd2ec2edb5b3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kEnemyMaxNum: 0
   enemy: {fileID: 379155128910523174, guid: 33ebd5b4251e5414289238a74f9939f8, type: 3}
   span: 1
 --- !u!4 &857420161
@@ -1100,6 +1101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed99022de78ac474d9993795655eb474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _strength: 1
 --- !u!114 &1368897903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2053,6 +2055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nowexp: 0
+  enhance: 1
   expBar: {fileID: 0}
   level: {fileID: 1394784638}
 --- !u!114 &2138816819
