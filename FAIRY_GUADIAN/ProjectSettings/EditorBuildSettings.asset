@@ -8,9 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TimerSample.unity
     guid: 8a00e87a72ba34a4f807fc23a6563476
+  - enabled: 1
+    path: Assets/Scenes/TitleScene.unity
+    guid: ed3831dde2f4a36449ea997bea1030f2
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: ed15bd7223d24eb4abc75ef132377db1
   - enabled: 1
     path: Assets/Scenes/Clear Scene.unity
     guid: 9e0b7fc26b9c17c4cab4b9f9bdd0dfb3
