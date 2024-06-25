@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     private int count;
     public float strength = 1;
-    float AddSpeed = 1;
+    public float AddSpeed = 1;
     Rigidbody2D rigid2D;
     float xLimit = 8.3f;
     float yLimit = 4.3f;
