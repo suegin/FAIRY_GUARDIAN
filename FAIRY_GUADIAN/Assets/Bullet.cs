@@ -4,37 +4,27 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float fMoveSpeed = 7.0f;  // 移動値
-    Vector3 bulletPoint;                // 弾の位置
-    public float MoveSpeed = 20.0f;         // 移動値
-    int frameCount = 0;             // フレームカウント
-    const int deleteFrame = 180;    // 削除フレーム
+    private GameObject Fairy;
 
-
-    // 追加
-    public GameObject BulletObj;     // 弾のゲームオブジェクト
     // Start is called before the first frame update
     void Start()
     {
-        bulletPoint = transform.Find("BulletPoint").localPosition;
-        Instantiate(BulletObj, transform.position + bulletPoint, Quaternion.identity);
+        Fairy = GameObject.Find("Fairy");
     }
-
     // Update is called once per frame
     void Update()
     {
-        // ボタンを押したとき
-        if (Input.GetButtonDown("Fire1"))
-        {
-            // 弾の生成
-            Instantiate(BulletObj);
-        }
+        Destroy(gameObject, 5.0f);
 
-        // 位置の更新
-        transform.Translate(MoveSpeed * Time.deltaTime, 0, 0);
+        //transform.position += new Vector3(Fairy.position.x, Fairy.position.x,0);
 
-        // 一定フレームで消す
-        if (++frameCount > deleteFrame)
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.name);
+
+        if(collision.tag == "Fairy" /*|| collision.tag == "balia"*/)
         {
             Destroy(gameObject);
         }
