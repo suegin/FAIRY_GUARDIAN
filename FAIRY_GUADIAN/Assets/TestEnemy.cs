@@ -9,7 +9,7 @@ public class Testenemy : MonoBehaviour
 
     GameObject Barrier;
 
-    float speed = 0.005f;
+    public float speed = 0.005f;
 
     // Start is called before the first frame update
     void Start()
