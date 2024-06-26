@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     float xLimit = 8.3f;
     float yLimit = 4.3f;
     BarrierDirector barrierDirector;
+    BoxCollider2D boxCol;
+    private float sizeCount =1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour
         this.rigid2D = GetComponent<Rigidbody2D>();
         count = 0;
         barrierDirector = GetComponent<BarrierDirector>();
+        boxCol = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -70,10 +73,14 @@ public class PlayerController : MonoBehaviour
         {
             if(count < 5)       // 5‰ñ‚Ü‚Å
             {
+                Debug.Log(sizeCount);
                 strength += 5;     // UŒ‚—Í‚ª5ã‚ª‚é
                 AddSpeed += 1.2f;      // ‘¬“x‚ª1.2ã‚ª‚é
-                count += 1;
-                Debug.Log(count);
+                sizeCount += 0.5f;
+                count++;
+                boxCol.size = new Vector2(sizeCount, sizeCount);
+                
+                
             }
             
         }
