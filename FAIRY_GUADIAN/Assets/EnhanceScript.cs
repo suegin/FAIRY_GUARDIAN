@@ -4,27 +4,32 @@ using UnityEngine;
 
 public class EnhanceScript : MonoBehaviour
 {
-    PlayerController strength;
+    PlayerController attack;
 
     ExpBarScript enhance;
 
     // Start is called before the first frame update
     void Start()
     {
-        strength = GameObject.Find("player").GetComponent<PlayerController>();
+        attack = GameObject.Find("player").GetComponent<PlayerController>();
         enhance = GameObject.Find("exp").GetComponent<ExpBarScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if(enhance.enhance > 0)
+            transform.position = new Vector3(0, 0, 0);
+            if (Input.GetKeyDown(KeyCode.A) && enhance.enhance > 0)
             {
-                strength.strength += 0.5f;
+                attack.strength += 0.5f;
                 enhance.enhance -= 1;
             }
-        }
+            else if(Input.GetKeyDown(KeyCode.B) && enhance.enhance> 0)
+            {
+
+            }
+        } 
     }
 }
