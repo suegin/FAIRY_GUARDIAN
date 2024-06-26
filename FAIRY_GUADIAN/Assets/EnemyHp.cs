@@ -18,7 +18,7 @@ public class EnemyHp : MonoBehaviour
         // HIT.enabled = false;
         // timer = 0;
 
-        expBarScript = GameObject.Find("exp").GetComponent<ExpBarScript>();
+       // expBarScript = GameObject.Find("exp").GetComponent<ExpBarScript>();
 
     }
 

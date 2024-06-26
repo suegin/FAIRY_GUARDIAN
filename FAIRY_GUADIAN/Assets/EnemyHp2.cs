@@ -14,7 +14,7 @@ public class EnemyHp2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        expBarScript = GameObject.Find("exp").GetComponent<ExpBarScript>();
+     //   expBarScript = GameObject.Find("exp").GetComponent<ExpBarScript>();
     }
 
     // Update is called once per frame

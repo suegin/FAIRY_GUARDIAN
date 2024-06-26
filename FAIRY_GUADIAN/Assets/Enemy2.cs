@@ -12,6 +12,9 @@ public class Enemy2 : MonoBehaviour
 
     GameObject Fairy;
 
+    public GameObject m_shot;// ショットの弾
+
+    private int count = 0;
 
     float speed = 0.01f;
     // Start is called before the first frame update
@@ -38,12 +41,16 @@ public class Enemy2 : MonoBehaviour
         if(a >= 5)
         {
             transform.position += new Vector3(x, y, transform.position.z);
+            
+        }
+        else
+        {
+            Shot();
         }
 
 
         
 
-        // Debug.Log(Player.transform.position);
 
 
     }
@@ -53,6 +60,21 @@ public class Enemy2 : MonoBehaviour
         if (other.gameObject.tag == "Barrier")
         {
             speed = 0.000001f;
+        }
+    }
+
+    /// <summary>
+    /// ショットを打ち出す処理
+    /// </summary>
+    private void Shot()
+    {
+        count += 1;
+
+        // ６０フレームごとに砲弾を発射する
+        if (count % 60 == 0)
+        {
+            // 弾のインスタンス生成を行う
+            GameObject shell = Instantiate(m_shot, transform.position, Quaternion.identity);
         }
     }
 }
