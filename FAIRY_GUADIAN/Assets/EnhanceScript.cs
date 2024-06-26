@@ -4,34 +4,58 @@ using UnityEngine;
 
 public class EnhanceScript : MonoBehaviour
 {
-    //PlayerController attack;
+    //PlayerController pAttack;
+
+    //PlayerController pSpeed;
 
     //ExpBarScript enhance;
 
-    Testenemy speed;
+    Testenemy eSpeed;
+
+    //float attackTemp;
+    //float speedTemp;
 
     // Start is called before the first frame update
     void Start()
     {
-        // attack = GameObject.Find("player").GetComponent<PlayerController>();
+        //pAttack = GameObject.Find("player").GetComponent<PlayerController>();
+
+        //pSpeed = GameObject.Find("player").GetComponent<PlayerController>();
+        
         // enhance = GameObject.Find("exp").GetComponent<ExpBarScript>();
-        speed = GameObject.Find("enemy").GetComponent<Testenemy>();
+        
+        eSpeed = GameObject.Find("enemy").GetComponent<Testenemy>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // 左シフトが押されたら
         if(Input.GetKey(KeyCode.LeftShift))
         {
-            speed.speed *= 0.0f;
+            // 敵の動きが止まる
+            eSpeed.speed *= 0.0f;
+            // 強化画面を表示
             transform.position = new Vector3(0, 0, 0);
+            //// プレイヤーの攻撃力を0にする
+            //attackTemp = pAttack.strength;
+            //pAttack.strength *= 0.0f;
+            //// プレイヤーの動きを止める
+            //speedTemp = pSpeed.speed;
+            //pSpeed.speed *= 0.0f;
         }
 
+        // 左シフトが離されたら
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            Debug.Log("a");
+            // 強化画面を閉じる
             transform.position = new Vector3(0, 30, 0);
-            speed.speed += 0.005f;
+            // 敵の動きを再開する
+            eSpeed.speed += 0.005f;
+            //// プレイヤーの攻撃力を元に戻す
+            //pAttack.strength = attackTemp;
+            //// プレイヤーの動きを再開する
+            //pSpeed.speed = speedTemp;
         }
     }
 }
