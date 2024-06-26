@@ -11,6 +11,16 @@ public class GameTimer : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            m_bActive = false;
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            m_bActive = true;
+        }
+
         if (m_bActive)
         {
             m_fTimer += Time.deltaTime;

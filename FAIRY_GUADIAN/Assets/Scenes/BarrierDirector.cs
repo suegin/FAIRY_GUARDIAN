@@ -37,7 +37,6 @@ public class BarrierDirector : MonoBehaviour
     // Enemyと接触している間
     void OnTriggerStay2D(Collider2D other)
     { 
-
         // バリアの耐久値が減る
         if (other.gameObject.tag == "Enemy")
         {
@@ -46,7 +45,7 @@ public class BarrierDirector : MonoBehaviour
 
             if (damageCoolTime < 2)
             {
-                barrierHp = barrierHp = damage;
+                barrierHp = barrierHp - damage;
                 Debug.Log("ダメージ！");
 
             }
@@ -55,6 +54,5 @@ public class BarrierDirector : MonoBehaviour
                 damageCoolTime = 0;
             }
         }
-            
     }
 }
