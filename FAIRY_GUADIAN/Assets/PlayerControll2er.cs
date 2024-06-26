@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     private int count;
     public float strength = 1;
+    public float speed = 0.07f;
     public float AddSpeed = 1;
     Rigidbody2D rigid2D;
     float xLimit = 8.3f;
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
         // ←が押された時
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Translate(-0.07f * AddSpeed, 0, 0); // 左に1動かす
+            transform.Translate(-speed * AddSpeed, 0, 0); // 左に1動かす
             scale.x = -0.1f; // 反転する（左向き）
             
         }
@@ -41,7 +42,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             
-            transform.Translate(0.07f * AddSpeed, 0, 0); // 右に1動かす
+            transform.Translate(speed * AddSpeed, 0, 0); // 右に1動かす
             scale.x = 0.1f; // そのまま（右向き）
         }
         transform.localScale = scale; // 代入し直す
@@ -49,14 +50,14 @@ public class PlayerController : MonoBehaviour
         // ↑が押された時
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.Translate(0, 0.07f * AddSpeed, 0); // 上に1動かす
+            transform.Translate(0, speed * AddSpeed, 0); // 上に1動かす
             
         }
 
         // ↓が押された時
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.Translate(0, -0.07f * AddSpeed, 0); // 下に1動かす
+            transform.Translate(0, -speed * AddSpeed, 0); // 下に1動かす
         }
 
         Vector3 playerPos = transform.position;
@@ -82,6 +83,8 @@ public class PlayerController : MonoBehaviour
             barrierDirector.barrierHp += 5;
             Debug.Log(barrierDirector.barrierHp);
         }
+
+        
 
     }
    
