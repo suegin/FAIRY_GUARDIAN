@@ -6,6 +6,9 @@ public class Bullet : MonoBehaviour
 {
     private GameObject Fairy;
 
+    // ’e‚Ì‘¬“x
+    float speed = 0.03f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +20,18 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, 5.0f);
 
         //transform.position += new Vector3(Fairy.position.x, Fairy.position.x,0);
+
+        float b = Fairy.transform.position.x - transform.position.x;
+        float c = (Fairy.transform.position.y - transform.position.y);
+
+        float dis = (b * b + c * c);
+        float a = Mathf.Sqrt(dis);
+        float x = Fairy.transform.position.x - transform.position.x;
+        x = x / a * speed;
+        float y = Fairy.transform.position.y - transform.position.y;
+        y = y / a * speed;
+
+        transform.position += new Vector3(x, y, 0);
 
     }
 
