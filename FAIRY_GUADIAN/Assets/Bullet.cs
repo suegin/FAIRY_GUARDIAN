@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     private GameObject Fairy;
 
     // ’e‚Ì‘¬“x
-    float speed = 0.03f;
+    float speed = 0.01f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,9 +32,11 @@ public class Bullet : MonoBehaviour
         y = y / a * speed;
 
         transform.position += new Vector3(x, y, 0);
-
+      
     }
-
+   
+        
+    // ’e‚ªÁ‚¦‚éˆ—
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.name);

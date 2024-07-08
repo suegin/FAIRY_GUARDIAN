@@ -71,7 +71,7 @@ public class Enemy2 : MonoBehaviour
         count += 1;
 
         // ６０フレームごとに砲弾を発射する
-        if (count % 60 == 0)
+        if (count % 120 == 0)
         {
             // 弾のインスタンス生成を行う
             GameObject shell = Instantiate(m_shot, transform.position, Quaternion.identity);
