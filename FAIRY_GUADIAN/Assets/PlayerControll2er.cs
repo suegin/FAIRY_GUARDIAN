@@ -6,16 +6,16 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
-    private int count;
-    public float strength = 1;
-    public float speed = 0.07f;
-    public float AddSpeed = 1;
+    private int count;  // 強化回数
+    public float strength = 1;  // 初期パワー
+    public float speed = 0.07f; // 初速度
+    public float AddSpeed = 1;  // 加速
     Rigidbody2D rigid2D;
-    float xLimit = 8.3f;
-    float yLimit = 4.3f;
+    float xLimit = 8.3f;    // 横の最大範囲
+    float yLimit = 4.3f;    // 縦の最大範囲
     BarrierDirector barrierDirector;
     BoxCollider2D boxCol;
-    private float sizeCount =1.0f;
+    private float sizeCount =1.0f;  // 当たり判定の大きさ
 
     // Start is called before the first frame update
     void Start()
@@ -64,8 +64,8 @@ public class PlayerController : MonoBehaviour
         }
 
         Vector3 playerPos = transform.position;
-        playerPos.x = Mathf.Clamp(playerPos.x, -xLimit, xLimit);
-        playerPos.y = Mathf.Clamp(playerPos.y, -4.7f, yLimit);
+        playerPos.x = Mathf.Clamp(playerPos.x, -xLimit, xLimit);    // 横の範囲制限
+        playerPos.y = Mathf.Clamp(playerPos.y, -4.7f, yLimit);      // 縦の範囲制限
         transform.position = playerPos;
 
         // Qが押された時
@@ -76,23 +76,17 @@ public class PlayerController : MonoBehaviour
                 Debug.Log(sizeCount);
                 strength += 5;     // 攻撃力が5上がる
                 AddSpeed += 1.2f;      // 速度が1.2上がる
-                sizeCount += 0.5f;
+                sizeCount += 0.5f;  // 当たり判定が0.5大きくなる
                 count++;
                 boxCol.size = new Vector2(sizeCount, sizeCount);
-                
-                
             }
-            
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            barrierDirector.barrierHp += 5;
+            barrierDirector.barrierHp += 5;     // バリアのHp回復
             Debug.Log(barrierDirector.barrierHp);
         }
-
-        
-
     }
    
 }
