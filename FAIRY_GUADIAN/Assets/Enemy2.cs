@@ -70,7 +70,7 @@ public class Enemy2 : MonoBehaviour
     {
         count += 1;
 
-        // ６０フレームごとに砲弾を発射する
+        // 120フレームごとに砲弾を発射する
         if (count % 120 == 0)
         {
             // 弾のインスタンス生成を行う
