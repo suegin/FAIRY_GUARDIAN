@@ -9,6 +9,8 @@ public class player : MonoBehaviour
     EnemyHp _eneHp;
     public Collider2D HIT;
     int timer;
+    public AudioSource AudioSource;
+    public AudioSource slash;
     
     private void Start()
     {
@@ -22,8 +24,8 @@ public class player : MonoBehaviour
         {
             
             HIT.enabled = true;  // Box Collider2Dを有効にする
-            Debug.Log("HIT");
-            
+            // Debug.Log("HIT");
+            AudioSource.Play();
         }
     }
     private void FixedUpdate()
@@ -60,7 +62,12 @@ public class player : MonoBehaviour
              // _eneHp.enemyHp -= 1;
              // HIT.enabled = false;    // Box Collider2Dを無効にする
             Debug.Log("音が鳴る");
-            GetComponent<AudioSource>().Play();
+            slash.Play();
+            if (AudioSource.isPlaying == true)
+            {
+                AudioSource.Stop();
+            }
         }
+        
     }
 }
