@@ -16,6 +16,7 @@ public class EnemyDestroy : MonoBehaviour
     }
     private void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.W))
         {
             HIT.enabled = true;  // Box Collider2D‚ð—LŒø‚É‚·‚é
