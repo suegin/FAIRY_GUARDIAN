@@ -933,8 +933,8 @@ GameObject:
   - component: {fileID: 2064447568}
   - component: {fileID: 2064447567}
   m_Layer: 0
-  m_Name: Balia
-  m_TagString: Balia
+  m_Name: Barrier
+  m_TagString: Barrier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

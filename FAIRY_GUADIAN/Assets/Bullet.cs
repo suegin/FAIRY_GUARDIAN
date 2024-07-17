@@ -41,7 +41,7 @@ public class Bullet : MonoBehaviour
     {
         Debug.Log(collision.name);
 
-        if(collision.tag == "Fairy" || collision.tag == "Balia")
+        if(collision.tag == "Fairy" || collision.tag == "Barrier")
         {
             Destroy(gameObject);
         }
