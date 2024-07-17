@@ -11,7 +11,7 @@ public class Enemy1 : MonoBehaviour
     GameObject Fairy;
 
 
-    float speed = 0.005f;
+    public float speed = 0.005f;
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +47,11 @@ public class Enemy1 : MonoBehaviour
         {
             speed = 0.000001f;
         }
+
+        
     }
+
+    
 
 
 }
