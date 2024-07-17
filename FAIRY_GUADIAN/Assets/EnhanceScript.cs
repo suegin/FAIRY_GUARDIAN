@@ -47,7 +47,7 @@ public class EnhanceScript : MonoBehaviour
             // 敵の動きが止まる
             //eSpeed1.speed = 0.0f;
             // 強化画面を表示
-            //transform.position = new Vector3(0, 0, 0);
+            transform.position = new Vector3(0, 0, 0);
             //// プレイヤーの攻撃力を0にする
             //attackTemp = pAttack.strength;
             //pAttack.strength *= 0.0f;
@@ -60,7 +60,7 @@ public class EnhanceScript : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             // 強化画面を閉じる
-            //transform.position = new Vector3(0, 30, 0);
+            transform.position = new Vector3(0, 30, 0);
             // 敵の動きを再開する
             //eSpeed.speed += 0.005f;
             //// プレイヤーの攻撃力を元に戻す
