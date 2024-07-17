@@ -7,10 +7,14 @@ public class EnhanceScript : MonoBehaviour
     //PlayerController pAttack;
 
     PlayerController pSpeed;
-   
+
     //ExpBarScript enhance;
 
     //Testenemy eSpeed;
+    //Enemy1 eSpeed1;
+    //Enemy2 eSpeed2;
+    //Enemy3 eSpeed3;
+    //Enemy4 eSpeed4;
 
     //float attackTemp;
     float speedTemp;
@@ -25,7 +29,11 @@ public class EnhanceScript : MonoBehaviour
 
         // enhance = GameObject.Find("exp").GetComponent<ExpBarScript>();
 
-        //eSpeed = GameObject.Find("enemy").GetComponent<Testenemy>();
+        //eSpeed1 = GameObject.Find("Enemy1").GetComponent<Enemy1>();
+        //eSpeed2 = GameObject.Find("Enemy2").GetComponent<Enemy2>();
+        //eSpeed3 = GameObject.Find("Enemy3").GetComponent<Enemy3>();
+        //eSpeed4 = GameObject.Find("Enemy4").GetComponent<Enemy4>();
+
         speedTemp = pSpeed.speed;
         speedTemp2 = pSpeed.AddSpeed;
     }
@@ -37,7 +45,7 @@ public class EnhanceScript : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftShift))
         {
             // “G‚Ì“®‚«‚ª~‚Ü‚é
-            //eSpeed.speed = 0.0f;
+            //eSpeed1.speed = 0.0f;
             // ‹­‰»‰æ–Ê‚ğ•\¦
             //transform.position = new Vector3(0, 0, 0);
             //// ƒvƒŒƒCƒ„[‚ÌUŒ‚—Í‚ğ0‚É‚·‚é
