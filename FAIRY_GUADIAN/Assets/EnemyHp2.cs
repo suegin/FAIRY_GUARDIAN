@@ -22,8 +22,8 @@ public class EnemyHp2 : MonoBehaviour
     {
         if (enemyHp <= 0)
         {
-            expBarScript.nowexp += 150;
-            this.gameObject.SetActive(false);
+            //expBarScript.nowexp += 150;
+            //this.gameObject.SetActive(false);
         }
     }
 
@@ -38,7 +38,7 @@ public class EnemyHp2 : MonoBehaviour
                 Debug.Log(enemyHp);
                 // HIT.enabled = false;    // Box Collider2D‚ð–³Œø‚É‚·‚é
             }
-            else if (damageCoolTime > 250)
+            else if (damageCoolTime > 4)
             {
                 damageCoolTime = 0;
             }

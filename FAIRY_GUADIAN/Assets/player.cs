@@ -34,7 +34,7 @@ public class player : MonoBehaviour
         {
             timer++;        // timerをカウントする
         }
-        if (timer > 30)
+        if (timer > 5)
         {
             timer = 0;      // timerを0に戻す
             HIT.enabled = false;　　// Box Collider2Dを無効にする
@@ -61,7 +61,7 @@ public class player : MonoBehaviour
 
              // _eneHp.enemyHp -= 1;
              // HIT.enabled = false;    // Box Collider2Dを無効にする
-            Debug.Log("音が鳴る");
+            //Debug.Log("音が鳴る");
             slash.Play();
             if (AudioSource.isPlaying == true)
             {
