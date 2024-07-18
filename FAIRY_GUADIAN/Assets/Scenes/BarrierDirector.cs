@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class BarrierDirector : MonoBehaviour
 {
     // バリアの耐久値
-    public int barrierHp = 10;
+    public int barrierHp = 1000;
     // 一度ダメージを食らったら一定時間ダメージを食らわないようにする
     private int damageCoolTime = 0;
     // ダメージ量
@@ -46,11 +46,11 @@ public class BarrierDirector : MonoBehaviour
 
             if (damageCoolTime < 2)
             {
-                barrierHp = barrierHp = damage;
-                Debug.Log("ダメージ！");
-
+                barrierHp = barrierHp - damage;
+                //Debug.Log("ダメージ！");
+                Debug.Log(barrierHp);
             }
-            else if(damageCoolTime > 250)
+            else if(damageCoolTime > 25)
             {
                 damageCoolTime = 0;
             }
