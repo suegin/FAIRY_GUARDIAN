@@ -11,7 +11,7 @@ public class ExpBarScript : MonoBehaviour
     public int nowexp = 0;
 
     // プレイヤーの強化に必要とする値
-    public int enhance = 1;
+    public int enhance = 1000;
 
     LevelDirector levelDirector;
     public Slider expBar;

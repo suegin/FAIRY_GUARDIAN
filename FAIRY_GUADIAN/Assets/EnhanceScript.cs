@@ -4,46 +4,50 @@ using UnityEngine;
 
 public class EnhanceScript : MonoBehaviour
 {
-    //PlayerController pAttack;
+    PlayerController pAttack;
 
     PlayerController pSpeed;
 
-    //ExpBarScript enhance;
+    ExpBarScript Enhance;
 
-    //Testenemy eSpeed;
+    BarrierDirector Hp;
+
     Enemy1 eSpeed1;
-    //Enemy1 eSpeed1Clone;
-    //Enemy2 eSpeed2;
-    //Enemy2 eSpeed2Clone;
+    Enemy2 eSpeed2;
     Enemy3 eSpeed3;
-    //Enemy3 eSpeed3Clone;
     Enemy4 eSpeed4;
-    //Enemy4 eSpeed4Clone;
 
-    //float attackTemp;
+    float attackTemp;
     float speedTemp;
     float speedTemp2;
+
+    public bool shot;
+
+    public bool spawn;
 
     // Start is called before the first frame update
     void Start()
     {
-        //pAttack = GameObject.Find("player").GetComponent<PlayerController>();
+        pAttack = GameObject.Find("player").GetComponent<PlayerController>();
 
         pSpeed = GameObject.Find("player").GetComponent<PlayerController>();
 
-        // enhance = GameObject.Find("exp").GetComponent<ExpBarScript>();
+        Enhance = GameObject.Find("exp").GetComponent<ExpBarScript>();
+
+        Hp = GameObject.Find("barrier").GetComponent<BarrierDirector>();
 
         eSpeed1 = GameObject.Find("Enemy1").GetComponent<Enemy1>();
-        //eSpeed1Clone = GameObject.Find("Enemy1(Clone)").GetComponent<Enemy1>();
-        //eSpeed2 = GameObject.Find("Enemy2").GetComponent<Enemy2>();
-        //eSpeed2Clone = GameObject.Find("Enemy2(Clone)").GetComponent<Enemy2>();
+        eSpeed2 = GameObject.Find("Enemy2").GetComponent<Enemy2>();
         eSpeed3 = GameObject.Find("Enemy3").GetComponent<Enemy3>();
-        //eSpeed3Clone = GameObject.Find("Enemy3(Clone)").GetComponent<Enemy3>();
         eSpeed4 = GameObject.Find("Enemy4").GetComponent<Enemy4>();
-        //eSpeed4Clone = GameObject.Find("Enemy4(Clone)").GetComponent<Enemy4>();
 
+        attackTemp = pAttack.strength;
         speedTemp = pSpeed.speed;
         speedTemp2 = pSpeed.AddSpeed;
+
+        shot = true;
+
+        spawn = true;
     }
 
     // Update is called once per frame
@@ -54,21 +58,45 @@ public class EnhanceScript : MonoBehaviour
         {
             // 敵の動きが止まる
             eSpeed1.speed = 0.0f;
-            //eSpeed1Clone.speed = 0.0f;
-            //eSpeed2.speed = 0.0f;
-            //eSpeed2Clone.speed = 0.0f;
+            eSpeed2.speed = 0.0f;
             eSpeed3.speed = 0.0f;
-            //eSpeed3Clone.speed = 0.0f;
             eSpeed4.speed = 0.0f;
-            //eSpeed4Clone.speed = 0.0f;
             // 強化画面を表示
             transform.position = new Vector3(0, 0, 0);
-            //// プレイヤーの攻撃力を0にする
-            //attackTemp = pAttack.strength;
-            //pAttack.strength *= 0.0f;
+            // プレイヤーの攻撃力を0にする
+            pAttack.strength *= 0.0f;
             // プレイヤーの動きを止める
             pSpeed.speed = 0.0f;
             pSpeed.AddSpeed = 0.0f;
+            
+            shot = false;
+
+            spawn = false;
+
+            // Aが押されたら
+            if (Input.GetKeyDown(KeyCode.A) && Enhance.enhance > 0)
+            {
+                // 攻撃力を0.5上げる
+                attackTemp += 0.5f;
+                Enhance.enhance -= 1;
+            }
+
+            // Sが押されたら
+            if (Input.GetKeyDown(KeyCode.S) && Enhance.enhance > 0)
+            {
+                // バリアの耐久値を3回復
+                Hp.barrierHp += 3;
+                Enhance.enhance -= 1;
+            }
+
+            // Dが押されたら
+            if (Input.GetKeyDown(KeyCode.D) && Enhance.enhance > 0)
+            {
+                // スピードを上げる
+                speedTemp += 0.002f;
+                speedTemp2 += 0.12f;
+                Enhance.enhance -= 1;
+            }
         }
 
         // 左シフトが離されたら
@@ -78,18 +106,18 @@ public class EnhanceScript : MonoBehaviour
             transform.position = new Vector3(0, 30, 0);
             // 敵の動きを再開する
             eSpeed1.speed += 0.005f;
-            //eSpeed1Clone.speed += 0.005f;
-            //eSpeed2Clone.speed += 0.005f;
-            //eSpeed2Clone.speed += 0.005f;
+            eSpeed2.speed += 0.005f;
             eSpeed3.speed += 0.005f;
-            //eSpeed3Clone.speed += 0.005f;
             eSpeed4.speed += 0.005f;
-            //eSpeed4Clone.speed += 0.005f;
-            //// プレイヤーの攻撃力を元に戻す
-            //pAttack.strength = attackTemp;
+            // プレイヤーの攻撃力を元に戻す
+            pAttack.strength = attackTemp;
             // プレイヤーの動きを再開する
             pSpeed.speed = speedTemp;
             pSpeed.AddSpeed = speedTemp2;
+
+            shot = true;
+
+            spawn = true;
         }
     }
 }
