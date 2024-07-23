@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class Enemy2 : MonoBehaviour
 {
-   
-
     GameObject Barrier;
 
     GameObject Fairy;
@@ -16,19 +14,22 @@ public class Enemy2 : MonoBehaviour
 
     private int count = 0;
 
-    float speed = 0.01f;
+    public float speed = 0.01f;
+
+    EnhanceScript shot;
+
     // Start is called before the first frame update
     void Start()
     {
         Barrier = GameObject.Find("Barrier");
         Fairy = GameObject.Find("Fairy");
+
+        shot = GameObject.Find("Enhance").GetComponent<EnhanceScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-      
-
         float b = Fairy.transform.position.x - transform.position.x;
         float c = (Fairy.transform.position.y - transform.position.y);
 
@@ -41,18 +42,25 @@ public class Enemy2 : MonoBehaviour
         if(a >= 5)
         {
             transform.position += new Vector3(x, y, transform.position.z);
-            
         }
         else
         {
-            Shot();
+            if (shot.shot)
+            {
+                Shot();
+            }
+            
         }
 
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = 0;
+        }
 
-        
-
-
-
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed = 0.005f;
+        }
     }
 
     void OnTriggerStay2D(Collider2D other)

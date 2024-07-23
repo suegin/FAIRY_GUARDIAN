@@ -37,7 +37,15 @@ public class Enemy3 : MonoBehaviour
 
         // Debug.Log(Player.transform.position);
 
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = 0;
+        }
 
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed = 0.005f;
+        }
 
     }
 

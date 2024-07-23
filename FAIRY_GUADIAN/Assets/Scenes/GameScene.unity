@@ -694,6 +694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f20981df9a26424f94e98a1f4f8217d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shot: 0
+  spawn: 0
 --- !u!1001 &645927732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2080,7 +2082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135b9da370316af46b5fd5437cfdca36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrierHp: 10
+  barrierHp: 1000
 --- !u!1 &1815831073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,6 +2113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f20981df9a26424f94e98a1f4f8217d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shot: 0
+  spawn: 0
 --- !u!212 &1815831075
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2669,7 +2673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nowexp: 0
-  enhance: 1
+  enhance: 1000
   expBar: {fileID: 0}
   level: {fileID: 1394784638}
 --- !u!114 &2138816819
