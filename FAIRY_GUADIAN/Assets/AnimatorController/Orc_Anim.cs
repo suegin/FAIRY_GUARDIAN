@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.VisualScripting;
+using Unity.Burst.CompilerServices;
 
 public class Orc_Anim : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class Orc_Anim : MonoBehaviour
     private Animator animator;
     private string Attack = "Attack";
     private string Walk = "Walk";
+    public int enemyHp = 10;
+    private int damageCoolTime = 0;
+    ExpBarScript expBarScript;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +23,7 @@ public class Orc_Anim : MonoBehaviour
         animator = GetComponent<Animator>();
         Barrier = GameObject.Find("Barrier");
         Fairy = GameObject.Find("Fairy");
+        //   expBarScript = GameObject.Find("exp").GetComponent<ExpBarScript>();
     }
 
     // Update is called once per frame
@@ -42,20 +48,29 @@ public class Orc_Anim : MonoBehaviour
         {
             animator.SetTrigger(Attack);
         }
-        //if(/*ターゲットに近づいた時の条件*/)
-        //{
-
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    animator.SetTrigger(Attack);
-        //}
-        //if(Input.GetKeyDown(KeyCode.LeftAlt))
-        //{
-        //    animator.SetTrigger(Walk);
-        //}
-
-        
     }
+    public void OnTriggerStay2D(Collider2D Collider)
+    {
+        if (Collider.gameObject.tag == "Player")
+        {
+            damageCoolTime++;
+            if (damageCoolTime < 2)
+            {
+                enemyHp -= 1;
+                Debug.Log(enemyHp);
+                // HIT.enabled = false;    // Box Collider2Dを無効にする
+            }
+            else if (damageCoolTime > 4)
+            {
+                damageCoolTime = 0;
+            }
+        }
+        if (enemyHp <= 0)
+        {
+            //expBarScript.nowexp += 150;
+            //this.gameObject.SetActive(false);
+        }
+
+    }
+
 }

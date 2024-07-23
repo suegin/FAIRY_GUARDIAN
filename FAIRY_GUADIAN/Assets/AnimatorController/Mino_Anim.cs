@@ -4,7 +4,7 @@ using UnityEngine;
 using Unity.VisualScripting;
 using Unity.Burst.CompilerServices;
 
-public class Soldier_Anim : MonoBehaviour
+public class Mino_Anim : MonoBehaviour
 {
     GameObject Barrier;
     GameObject Fairy;
