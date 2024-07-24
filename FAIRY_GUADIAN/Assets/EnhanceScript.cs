@@ -118,6 +118,8 @@ public class EnhanceScript : MonoBehaviour
             shot = true;
 
             spawn = true;
+
+            Debug.Log(pAttack.strength);
         }
     }
 }

@@ -2673,7 +2673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nowexp: 0
-  enhance: 1000
+  enhance: 0
   expBar: {fileID: 0}
   level: {fileID: 1394784638}
 --- !u!114 &2138816819
