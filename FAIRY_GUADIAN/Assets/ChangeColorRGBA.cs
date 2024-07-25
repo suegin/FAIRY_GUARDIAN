@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ChangeColorRGBA : MonoBehaviour
 {
+    TitleDirector TitleDirector;
     public float FadeSpeed = 0.75f;
     private float time = 0;
     private float alpha = 0;
@@ -21,18 +22,21 @@ public class ChangeColorRGBA : MonoBehaviour
         //render = GetComponent<SpriteRenderer>();
         FadeImage = GetComponent<Image>();
         alpha = FadeImage.color.a;
-        
+        TitleDirector = GetComponent<TitleDirector>();
+        FadeImage.color = new Color(255, 255, 255, 255);
+        FadeinOn();
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
+        
         // _isFadein‚ªtrue‚É‚µ‚½‚ç
         if (_isFadein)
         {
             time += Time.deltaTime;
             alpha = 1.0f - time / FadeSpeed;
-            FadeImage.color = new Color(0, 0, 0, alpha);
+            FadeImage.color = new Color(255, 255, 255, alpha);
             if (alpha < 0)
             {
                 FadeImage.enabled = false;
@@ -44,11 +48,12 @@ public class ChangeColorRGBA : MonoBehaviour
         {
             time += Time.deltaTime;
             alpha = time / FadeSpeed;
-            FadeImage.color = new Color(0, 0, 0, alpha);
+            FadeImage.color = new Color(255, 255, 255, alpha);
             if (alpha > 1)
             {
-                FadeImage.enabled = false;
-                _isFadein = false;
+                //FadeImage.enabled = false;
+                _isFadeout = false;
+                TitleDirector.LoadNextScene();
             }
         }
         
@@ -69,9 +74,18 @@ public class ChangeColorRGBA : MonoBehaviour
         }*/
 
     }
+
     public void FadeoutOn()
     {
+        FadeImage.enabled = true;
+        time = 0;
         _isFadeout = true;
+        
     }
-
+    public void FadeinOn()
+    {
+        FadeImage.enabled = true;
+        time = 0;
+        _isFadein = true;
+    }
 }

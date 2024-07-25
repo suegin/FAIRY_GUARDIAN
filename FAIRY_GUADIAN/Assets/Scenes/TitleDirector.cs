@@ -6,10 +6,12 @@ public class TitleDirector : MonoBehaviour
 {
     ChangeColorRGBA ChangeColorRGBA;
     private Image FadeImage;
+    
     // Start is called before the first frame update
     void Start()
     {
         FadeImage = GetComponent<Image>();
+        ChangeColorRGBA = GetComponent<ChangeColorRGBA>();
     }
 
     // Update is called once per frame
@@ -19,8 +21,15 @@ public class TitleDirector : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             ChangeColorRGBA.FadeoutOn();
-                SceneManager.LoadScene("StageSelectScene");
-           
+            ChangeColorRGBA.Update();
+            
         }
+        
+
+        
+    }
+    public void LoadNextScene()
+    {
+            SceneManager.LoadScene("StageSelectScene");
     }
 }
