@@ -1,10 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
     private GameObject Fairy;
+
+    int damageCoolTime;
+
+    int damage = 1;
+
+    BarrierDirector Hp;
+
+    public GameObject enemy = null;
 
     // 弾の速度
     float speed = 0.01f;
@@ -13,7 +23,10 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         Fairy = GameObject.Find("Fairy");
+
+        Hp = GameObject.Find("barrier").GetComponent<BarrierDirector>();
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -30,6 +43,21 @@ public class Bullet : MonoBehaviour
         y = y / a * speed;
 
         transform.position += new Vector3(x, y, 0);
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = 0.0f;
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed = 0.01f;
+        }
+
+        if(enemy == null)
+        {
+            Destroy(this.gameObject);
+        }
     }
         
     // 弾が消える処理
@@ -37,6 +65,19 @@ public class Bullet : MonoBehaviour
     {
         if(collision.tag == "Fairy" || collision.tag == "Barrier")
         {
+            //タイマーの計測
+            damageCoolTime++;
+
+            if (damageCoolTime < 2)
+            {
+                Hp.barrierHp = Hp.barrierHp - damage;
+                Debug.Log(Hp.barrierHp);
+            }
+            else if (damageCoolTime > 25)
+            {
+                damageCoolTime = 0;
+            }
+
             Destroy(gameObject);
         }
     }
