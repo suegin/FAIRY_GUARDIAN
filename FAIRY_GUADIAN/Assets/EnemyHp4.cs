@@ -27,6 +27,7 @@ public class EnemyHp4 : MonoBehaviour
         {
             expBarScript.nowexp += 150;
             this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
 
@@ -38,7 +39,6 @@ public class EnemyHp4 : MonoBehaviour
             if (damageCoolTime < 2)
             {
                 enemyHp -= 1;
-                Debug.Log(enemyHp);
             }
             else if (damageCoolTime > 4)
             {

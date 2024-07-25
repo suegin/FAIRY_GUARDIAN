@@ -17,9 +17,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Destroy(gameObject, 5.0f);
-
-        //transform.position += new Vector3(Fairy.position.x, Fairy.position.x,0);
+        Destroy(gameObject, 9.6f);
 
         float b = Fairy.transform.position.x - transform.position.x;
         float c = (Fairy.transform.position.y - transform.position.y);
@@ -32,15 +30,11 @@ public class Bullet : MonoBehaviour
         y = y / a * speed;
 
         transform.position += new Vector3(x, y, 0);
-      
     }
-   
         
     // íeÇ™è¡Ç¶ÇÈèàóù
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.name);
-
         if(collision.tag == "Fairy" || collision.tag == "Barrier")
         {
             Destroy(gameObject);

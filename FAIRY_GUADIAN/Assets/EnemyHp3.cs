@@ -7,7 +7,7 @@ using UnityEngine;
 public class EnemyHp3 : MonoBehaviour
 {
     public int enemyHp = 3;
-    // public Collider2D HIT;
+
     private int damageCoolTime = 0;
 
     ExpBarScript expBarScript;
@@ -15,28 +15,19 @@ public class EnemyHp3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // HIT.enabled = false;
-        // timer = 0;
-
-  //      expBarScript = GameObject.Find("exp").GetComponent<ExpBarScript>();
-
+        expBarScript = GameObject.Find("exp").GetComponent<ExpBarScript>();
     }
 
     // Update is called once per frame
 
     void Update()
     {
-
-       
         if (enemyHp <= 0)
         {
             expBarScript.nowexp += 150;
             this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
-    }
-    private void FixedUpdate()
-    {
-      
     }
 
     public void OnTriggerStay2D(Collider2D Collider)
@@ -47,15 +38,12 @@ public class EnemyHp3 : MonoBehaviour
             if (damageCoolTime < 2)
             {
                 enemyHp -= 1;
-                Debug.Log(enemyHp);
-              
             }
-            else if (damageCoolTime > 250)
+            else if (damageCoolTime > 4)
             {
                 damageCoolTime = 0;
             }
         }
-
     }
 }
 
