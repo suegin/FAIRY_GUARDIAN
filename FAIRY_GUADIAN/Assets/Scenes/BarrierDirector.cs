@@ -12,10 +12,14 @@ public class BarrierDirector : MonoBehaviour
 
     GameObject Enemy;
 
+    EnhanceScript Damage;
+
     // Start is called before the first frame update
     void Start()
     {
         Enemy = GameObject.Find("enemy");
+
+        Damage = GameObject.Find("Enhance").GetComponent<EnhanceScript>();
     }
 
     // Update is called once per frame
@@ -37,23 +41,24 @@ public class BarrierDirector : MonoBehaviour
     // Enemyと接触している間
     void OnTriggerStay2D(Collider2D other)
     { 
-
-        // バリアの耐久値が減る
-        if (other.gameObject.tag == "Enemy")
+        if (Damage.barrierDamage)
         {
-            //タイマーの計測
-            damageCoolTime++;
+            // バリアの耐久値が減る
+            if (other.gameObject.tag == "Enemy")
+            {
+                //タイマーの計測
+                damageCoolTime++;
 
-            if (damageCoolTime < 2)
-            {
-                barrierHp = barrierHp - damage;
-                Debug.Log(barrierHp);
-            }
-            else if(damageCoolTime > 25)
-            {
-                damageCoolTime = 0;
+                if (damageCoolTime < 2)
+                {
+                    barrierHp = barrierHp - damage;
+                    Debug.Log(barrierHp);
+                }
+                else if (damageCoolTime > 25)
+                {
+                    damageCoolTime = 0;
+                }
             }
         }
-            
     }
 }

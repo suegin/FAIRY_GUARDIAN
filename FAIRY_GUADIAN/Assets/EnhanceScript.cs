@@ -25,6 +25,8 @@ public class EnhanceScript : MonoBehaviour
 
     public bool spawn;
 
+    public bool barrierDamage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,8 @@ public class EnhanceScript : MonoBehaviour
         shot = true;
 
         spawn = true;
+
+        barrierDamage = true;
     }
 
     // Update is called once per frame
@@ -72,6 +76,8 @@ public class EnhanceScript : MonoBehaviour
             shot = false;
 
             spawn = false;
+
+            barrierDamage = false;
 
             // A‚ª‰Ÿ‚³‚ê‚½‚ç
             if (Input.GetKeyDown(KeyCode.A) && Enhance.enhance > 0)
@@ -119,7 +125,9 @@ public class EnhanceScript : MonoBehaviour
 
             spawn = true;
 
-            Debug.Log(pAttack.strength);
+            barrierDamage = true;
+
+            Debug.Log(Hp.barrierHp);
         }
     }
 }

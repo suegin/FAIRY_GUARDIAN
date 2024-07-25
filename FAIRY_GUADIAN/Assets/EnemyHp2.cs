@@ -11,6 +11,9 @@ public class EnemyHp2 : MonoBehaviour
     private int damageCoolTime = 0;
 
     ExpBarScript expBarScript;
+
+    GameObject bullet;
+
     // Start is called before the first frame update
     void Start()
     {

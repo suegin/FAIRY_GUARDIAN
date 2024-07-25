@@ -83,6 +83,7 @@ public class Enemy2 : MonoBehaviour
         {
             // 弾のインスタンス生成を行う
             GameObject shell = Instantiate(m_shot, transform.position, Quaternion.identity);
+            shell.GetComponent<Bullet>().enemy = this.gameObject;
         }
     }
 }
