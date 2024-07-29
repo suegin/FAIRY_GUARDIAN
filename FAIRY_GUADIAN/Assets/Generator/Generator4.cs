@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Generator : MonoBehaviour
+public class Generator4 : MonoBehaviour
 {
     [SerializeField] private int kEnemyMaxNum;
 
@@ -53,6 +53,12 @@ public class Generator : MonoBehaviour
                         py = Random.Range(5, 9);
                         px = Random.Range(-12, 12);
                     }
+                    go.transform.localScale = new Vector3(-5, 5, 5);
+                    // 真ん中より右だったら画像反転
+                    if (0 < px)
+                    {
+                        go.transform.localScale = new Vector3(5, 5, 5);
+                    }
 
                     //出現位置の設定
                     go.transform.position = new Vector3(px, py, 0);
@@ -61,3 +67,4 @@ public class Generator : MonoBehaviour
         }
     }
 }
+

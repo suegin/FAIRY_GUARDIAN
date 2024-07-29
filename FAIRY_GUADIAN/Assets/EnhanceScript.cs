@@ -57,8 +57,9 @@ public class EnhanceScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(shot);
         // ¶ƒVƒtƒg‚ª‰Ÿ‚³‚ê‚Ä‚éŠÔ
-        if(Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             // “G‚Ì“®‚«‚ª~‚Ü‚é
             eSpeed1.speed = 0.0f;

@@ -16,6 +16,7 @@ public class Orc_Anim : MonoBehaviour
     public int enemyHp = 10;
     private int damageCoolTime = 0;
     ExpBarScript expBarScript;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,7 @@ public class Orc_Anim : MonoBehaviour
         {
             animator.SetTrigger(Attack);
         }
+       
     }
     public void OnTriggerStay2D(Collider2D Collider)
     {

@@ -46,7 +46,7 @@ public class Mino_Anim : MonoBehaviour
         }
         else
         {
-            animator.SetTrigger(Attack);
+            //animator.SetTrigger(Attack);
         }
     }
     public void OnTriggerStay2D(Collider2D Collider)
