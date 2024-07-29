@@ -134,7 +134,8 @@ GameObject:
   - component: {fileID: 227022212}
   - component: {fileID: 227022215}
   - component: {fileID: 227022214}
-  - component: {fileID: 227022213}
+  - component: {fileID: 227022216}
+  - component: {fileID: 227022217}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -161,21 +162,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &227022213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227022211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43c7d98ec442a3c45bb9d38d4fa5bddb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FadeSpeed: 0.75
-  _isFadein: 0
-  _isFadeout: 0
 --- !u!114 &227022214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +200,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227022211}
   m_CullTransparentMesh: 1
+--- !u!114 &227022216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227022211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e5923edf30d5e4d86aefdafb12e86c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &227022217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227022211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acbaf00d2856e5441814e1f0c952b011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeSpeed: 0.75
+  _isFadein: 0
+  _isFadeout: 0
 --- !u!1 &664831049
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +236,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 664831051}
-  - component: {fileID: 664831050}
   m_Layer: 0
   m_Name: StageSelectDirector
   m_TagString: Untagged
@@ -231,18 +243,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &664831050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 664831049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9e5923edf30d5e4d86aefdafb12e86c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &664831051
 Transform:
   m_ObjectHideFlags: 0

@@ -22,7 +22,6 @@ public class TitleDirector : MonoBehaviour
         {
             ChangeColorRGBA.FadeoutOn();
             ChangeColorRGBA.Update();
-            
         }
         
 

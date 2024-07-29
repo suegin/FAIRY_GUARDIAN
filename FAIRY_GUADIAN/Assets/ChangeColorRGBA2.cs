@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChangeColorRGBA : MonoBehaviour
+public class ChangeColorRGBA2 : MonoBehaviour
 {
-    TitleDirector TitleDirector;
+    StageSelectDirector StageSelectDirector;
     public float FadeSpeed = 0.75f;
     private float time = 0;
     private float alpha = 0;
@@ -19,7 +19,7 @@ public class ChangeColorRGBA : MonoBehaviour
     {
         FadeImage = GetComponent<Image>();
         alpha = FadeImage.color.a;
-        TitleDirector = GetComponent<TitleDirector>();
+        StageSelectDirector = GetComponent<StageSelectDirector>();
         FadeImage.color = new Color(0, 0, 0, 0);
         FadeinOn();
     }
@@ -27,7 +27,7 @@ public class ChangeColorRGBA : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        
+
         // _isFadein‚ªtrue‚É‚µ‚½‚ç
         if (_isFadein)
         {
@@ -37,11 +37,11 @@ public class ChangeColorRGBA : MonoBehaviour
             if (alpha < 0)
             {
                 FadeImage.enabled = false;
-                _isFadein = false ;
+                _isFadein = false;
             }
         }
 
-        if (_isFadeout) 
+        if (_isFadeout)
         {
             time += Time.deltaTime;
             alpha = time / FadeSpeed;
@@ -50,7 +50,7 @@ public class ChangeColorRGBA : MonoBehaviour
             {
                 //FadeImage.enabled = false;
                 _isFadeout = false;
-                TitleDirector.LoadNextScene();
+                StageSelectDirector.LoadNextScene();
             }
         }
     }
@@ -60,7 +60,7 @@ public class ChangeColorRGBA : MonoBehaviour
         FadeImage.enabled = true;
         time = 0;
         _isFadeout = true;
-        
+
     }
     public void FadeinOn()
     {

@@ -4,13 +4,13 @@ using UnityEngine.UI;
 
 public class StageSelectDirector : MonoBehaviour
 {
-    ChangeColorRGBA ChangeColorRGBA;
+    ChangeColorRGBA2 ChangeColorRGBA2;
     private Image FadeImage;
     // Start is called before the first frame update
     void Start()
     {
         FadeImage = GetComponent<Image>();
-        ChangeColorRGBA = GetComponent<ChangeColorRGBA>();
+        ChangeColorRGBA2 = GetComponent<ChangeColorRGBA2>();
     }
 
     // Update is called once per frame
@@ -18,13 +18,17 @@ public class StageSelectDirector : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Q))
         {
-            ChangeColorRGBA.FadeoutOn();
-            ChangeColorRGBA.Update();
+            ChangeColorRGBA2.FadeoutOn();
+            ChangeColorRGBA2.Update();
             
         }
     }
     public void LoadNextScene()
     {
         SceneManager.LoadScene("GameScene");
+        GameObject obj = GameObject.Find("Title&SelectSceneBGM");
+
+        // 指定したオブジェクトを削除
+        Destroy(obj);
     }
 }
