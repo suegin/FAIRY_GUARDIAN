@@ -28,13 +28,6 @@ public class ExpBarScript : MonoBehaviour
     {
         expBar.value = nowexp;
         expBar.maxValue = maxexp;
-        
-        //// 経験値獲得条件
-        //if (Input.GetKeyDown(KeyCode.Space)) 
-        //{ 
-        //    // 経験値を獲得
-        //    nowexp += 150;
-        //}
 
         // 必要経験値量手に入れたら
         if (nowexp >= maxexp)

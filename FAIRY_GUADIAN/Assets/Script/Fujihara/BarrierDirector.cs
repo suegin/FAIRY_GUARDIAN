@@ -52,7 +52,6 @@ public class BarrierDirector : MonoBehaviour
                 if (damageCoolTime < 2)
                 {
                     barrierHp = barrierHp - damage;
-                    Debug.Log(barrierHp);
                 }
                 else if (damageCoolTime > 25)
                 {
