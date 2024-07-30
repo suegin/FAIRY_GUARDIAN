@@ -414,6 +414,7 @@ GameObject:
   - component: {fileID: 2016563022}
   - component: {fileID: 2016563021}
   - component: {fileID: 2016563024}
+  - component: {fileID: 2016563025}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -505,6 +506,18 @@ MonoBehaviour:
   FadeSpeed: 0.75
   _isFadein: 0
   _isFadeout: 0
+--- !u!225 &2016563025
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016563018}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

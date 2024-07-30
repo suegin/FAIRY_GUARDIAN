@@ -16,7 +16,7 @@ public class StageSelectDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Q))
+        if (ChangeColorRGBA2 != null & Input.GetKeyUp(KeyCode.Q))
         {
             ChangeColorRGBA2.FadeoutOn();
             ChangeColorRGBA2.Update();

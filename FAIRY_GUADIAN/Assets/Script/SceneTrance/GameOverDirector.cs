@@ -18,18 +18,33 @@ public class GameOverDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Return))
         {
             ChangeColorRGBA4.FadeoutOn();
             ChangeColorRGBA4.Update();
             _isLoadGame = true;
         }
-        if (Input.GetKeyUp(KeyCode.Return))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             ChangeColorRGBA4.FadeoutOn();
             ChangeColorRGBA4.Update();
             _isLoadStage = true;
         }
+    
+
+
+
+        //if (Input.GetKeyDown(KeyCode.Return))
+        //{
+        //    _isLoadStage = true;
+        //    StartCoroutine(ChangeColorRGBA4.FadeOutAndLoadNextScene());
+        //}
+        //else if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    _isLoadGame = true;
+        //    StartCoroutine(ChangeColorRGBA4.FadeOutAndLoadNextScene());
+        //}
+
     }
 
     public void LoadNextScene()
