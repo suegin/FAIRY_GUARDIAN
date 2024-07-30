@@ -26,9 +26,6 @@ public class StageSelectDirector : MonoBehaviour
     public void LoadNextScene()
     {
         SceneManager.LoadScene("GameScene");
-
-        TitleBGMScript.DontDestroyEnabled = false;
-
         GameObject obj = GameObject.Find("Title&SelectSceneBGM");
 
         // 指定したオブジェクトを削除

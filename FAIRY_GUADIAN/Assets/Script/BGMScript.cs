@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TitleBGMScript : MonoBehaviour
+public class BGMScript : MonoBehaviour
 {
-    public static bool DontDestroyEnabled = true;
+    public bool DontDestroyEnabled = true;
     // Start is called before the first frame update
     void Start()
     {
