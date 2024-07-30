@@ -57,7 +57,6 @@ public class EnhanceScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(shot);
         // ¶ƒVƒtƒg‚ª‰Ÿ‚³‚ê‚Ä‚éŠÔ
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -127,8 +126,6 @@ public class EnhanceScript : MonoBehaviour
             spawn = true;
 
             barrierDamage = true;
-
-            Debug.Log(Hp.barrierHp);
         }
     }
 }

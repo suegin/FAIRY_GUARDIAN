@@ -11,6 +11,10 @@ public class Testenemy : MonoBehaviour
 
     public float speed = 0.005f;
 
+    int hp = 5;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,10 +38,6 @@ public class Testenemy : MonoBehaviour
         float y = Barrier.transform.position.y - transform.position.y;
         y = y / a * speed;
         transform.position += new Vector3(x, y, transform.position.z);
-
-        // Debug.Log(Barrier.transform.position);
-
-
     }
 
     // ƒoƒŠƒA‚ÆÚG‚µ‚Ä‚¢‚éŠÔ
