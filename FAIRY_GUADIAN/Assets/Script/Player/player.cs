@@ -11,21 +11,26 @@ public class player : MonoBehaviour
     int timer;
     public AudioSource AudioSource;
     public AudioSource slash;
+
+    Animator anim;
     
     private void Start()
     {
         HIT.enabled = false;  // Box Collider2Dを無効にする
         // _eneHp = GameObject.Find("Enemy1").GetComponent<EnemyHp>();
         timer = 0;
+
+        anim = GetComponent<Animator>();
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            
             HIT.enabled = true;  // Box Collider2Dを有効にする
             // Debug.Log("HIT");
             AudioSource.Play();
+
+            anim.SetTrigger("Attack");
         }
     }
     private void FixedUpdate()

@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     BoxCollider2D boxCol;
     private float sizeCount =1.0f;  // 当たり判定の大きさ
 
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,8 @@ public class PlayerController : MonoBehaviour
         count = 0;
         barrierDirector = GetComponent<BarrierDirector>();
         boxCol = GetComponent<BoxCollider2D>();
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -36,31 +40,58 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(-speed * AddSpeed, 0, 0); // 左に1動かす
-            scale.x = -0.1f; // 反転する（左向き）
-            
+            scale.x = -0.3f; // 反転する（左向き）
+
+            animator.SetBool("Run", true);
         }
+
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            animator.SetBool("Run", false);
+        }
+
         transform.localScale = scale; // 代入し直す
 
         // →が押された時
         if (Input.GetKey(KeyCode.RightArrow))
-        {
-            
+        {   
             transform.Translate(speed * AddSpeed, 0, 0); // 右に1動かす
-            scale.x = 0.1f; // そのまま（右向き）
+            scale.x = 0.3f; // そのまま（右向き）
+
+            animator.SetBool("Run", true);
         }
+
+        if (Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            animator.SetBool("Run", false);
+        }
+
         transform.localScale = scale; // 代入し直す
 
         // ↑が押された時
         if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.Translate(0, speed * AddSpeed, 0); // 上に1動かす
-            
+
+            animator.SetBool("Run", true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            animator.SetBool("Run", false);
         }
 
         // ↓が押された時
         if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.Translate(0, -speed * AddSpeed, 0); // 下に1動かす
+
+            animator.SetBool("Run", true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            animator.SetBool("Run", false);
         }
 
         Vector3 playerPos = transform.position;
