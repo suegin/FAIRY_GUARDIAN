@@ -1435,6 +1435,7 @@ GameObject:
   - component: {fileID: 1368897900}
   - component: {fileID: 1368897907}
   - component: {fileID: 1368897906}
+  - component: {fileID: 1368897908}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -1606,7 +1607,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.853644, y: -0.52851903, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1803,6 +1804,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1368897908
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368897899}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ff52a1150f404ab4a8f1be9b87249426, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1394784638
 GameObject:
   m_ObjectHideFlags: 0
@@ -3044,7 +3066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3116013267178527083, guid: dd1fe4160b203774e8d4135328f520e2, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3372730505399073251, guid: dd1fe4160b203774e8d4135328f520e2, type: 3}
       propertyPath: m_LocalScale.x
@@ -3101,6 +3123,10 @@ PrefabInstance:
     - target: {fileID: 3372730505399073251, guid: dd1fe4160b203774e8d4135328f520e2, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553958187378599506, guid: dd1fe4160b203774e8d4135328f520e2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9211657324143539242, guid: dd1fe4160b203774e8d4135328f520e2, type: 3}
       propertyPath: m_Enabled
