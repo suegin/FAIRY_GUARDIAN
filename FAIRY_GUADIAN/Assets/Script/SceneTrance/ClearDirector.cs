@@ -21,23 +21,17 @@ public class ClearDirector : MonoBehaviour
     {
         //Debug.Assert(ChangeColorRGBA5 != null);
 
-        
 
-        if (ChangeColorRGBA5 != null)
+
+        
+        // null‰ñ”ð
+        if (ChangeColorRGBA5 != null & Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("“ü‚Á‚Ä‚¢‚é");
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                ChangeColorRGBA5.FadeoutOn();
-                ChangeColorRGBA5.Update();
-            }
+            ChangeColorRGBA5.FadeoutOn();
+            ChangeColorRGBA5.Update();
         }
-
-
         
-
-
+        
     }
     public void LoadNextScene()
     {

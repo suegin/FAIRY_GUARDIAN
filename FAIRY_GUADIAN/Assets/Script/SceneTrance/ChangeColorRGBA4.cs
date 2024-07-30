@@ -14,6 +14,10 @@ public class ChangeColorRGBA4 : MonoBehaviour
     private Image FadeImage;
     public bool _isFadein = false;  // boolをONにする
     public bool _isFadeout = false; // boolをONにする
+
+    // この辺加筆
+    private CanvasGroup _canvasGroup;
+    private float coroutineFadeSpeed = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +26,10 @@ public class ChangeColorRGBA4 : MonoBehaviour
         GameOverDirector = GetComponent<GameOverDirector>();
         FadeImage.color = new Color(0, 0, 0, 0);
         FadeinOn();
+
+        //_canvasGroup = GetComponent<CanvasGroup>();
+        //FadeImage.color = new Color(0, 0, 0, 1);
+        //StartCoroutine(FadeIn());
     }
 
     // Update is called once per frame
@@ -67,5 +75,33 @@ public class ChangeColorRGBA4 : MonoBehaviour
         FadeImage.enabled = true;
         time = 0;
         _isFadein = true;
+    }
+
+
+    // 適当に加筆
+    // コルーチン最強
+    public IEnumerator FadeOut()
+    {
+        while (_canvasGroup.alpha < 1)
+        {
+            _canvasGroup.alpha += Time.deltaTime / coroutineFadeSpeed;
+            yield return null;
+        }
+    }
+
+    public IEnumerator FadeIn()
+    {
+        while (_canvasGroup.alpha > 0)
+        {
+            _canvasGroup.alpha -= Time.deltaTime / coroutineFadeSpeed;
+            yield return null;
+        }
+    }
+
+    public IEnumerator FadeOutAndLoadNextScene()
+    {
+        Coroutine coroutine = StartCoroutine(FadeOut());
+        yield return coroutine;
+        GameOverDirector.LoadNextScene();
     }
 }
