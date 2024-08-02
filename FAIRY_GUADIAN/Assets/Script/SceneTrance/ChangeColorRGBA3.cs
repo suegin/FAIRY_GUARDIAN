@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChangeColorRGBA5 : MonoBehaviour
+public class ChangeColorRGBA3 : MonoBehaviour
 {
-    ClearDirector ClearDirector;
+    GameSceneDirector GameSceneDirector;
     public float FadeInSpeed = 1.5f;
     public float FadeOutSpeed = 1.5f;
     private float time = 0;
@@ -20,7 +20,7 @@ public class ChangeColorRGBA5 : MonoBehaviour
     {
         FadeImage = GetComponent<Image>();
         alpha = FadeImage.color.a;
-        ClearDirector = GetComponent<ClearDirector>();
+        GameSceneDirector = GetComponent<GameSceneDirector>();
         FadeImage.color = new Color(255, 255, 255, 255);
         FadeinOn();
     }
@@ -34,7 +34,7 @@ public class ChangeColorRGBA5 : MonoBehaviour
         {
             time += Time.deltaTime;
             alpha = 1.0f - time / FadeInSpeed;
-            FadeImage.color = new Color(255, 255, 255, alpha);
+            FadeImage.color = new Color(0, 0, 0, alpha);
             if (alpha < 0)
             {
                 FadeImage.enabled = false;
@@ -51,7 +51,7 @@ public class ChangeColorRGBA5 : MonoBehaviour
             {
                 //FadeImage.enabled = false;
                 _isFadeout = false;
-                ClearDirector.LoadNextScene();
+                GameSceneDirector.LoadNextScene();
             }
         }
     }

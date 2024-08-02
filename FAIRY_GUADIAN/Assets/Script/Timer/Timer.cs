@@ -8,6 +8,8 @@ public class Timer : MonoBehaviour
     public const float m_fStartTime = 300;
     public string m_strFormat;
     public GameTimer m_gameTimer;
+    public static int fShowTime_Second;
+    public static int fShowTime_Minits;
 
     private Text m_txt;
 
@@ -20,11 +22,11 @@ public class Timer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        int fShowTime_Second = (int)(m_fStartTime - m_gameTimer.CurrentTime) % 60;
-        int fShowTime_Minits = (int)(m_fStartTime - m_gameTimer.CurrentTime) / 60;
+        fShowTime_Second = (int)(m_fStartTime - m_gameTimer.CurrentTime) % 60;
+        fShowTime_Minits = (int)(m_fStartTime - m_gameTimer.CurrentTime) / 60;
 
         m_txt.text = string.Format(m_strFormat, fShowTime_Minits.ToString() + ":" + fShowTime_Second.ToString());
-        if (fShowTime_Minits <= 0 && fShowTime_Second <= 0)
+        if (fShowTime_Minits <= 0 & fShowTime_Second <= 0)
         {
             SceneManager.LoadScene("Clear Scene");
         }

@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class ChangeColorRGBA4 : MonoBehaviour
 {
     GameOverDirector GameOverDirector;
-    public float FadeSpeed = 0.75f;
+    public float FadeInSpeed = 0.75f;
+    public float FadeOutSpeed = 0.75f;
     private float time = 0;
     private float alpha = 0;
     //private SpriteRenderer render;
@@ -40,7 +41,7 @@ public class ChangeColorRGBA4 : MonoBehaviour
         if (_isFadein)
         {
             time += Time.deltaTime;
-            alpha = 1.0f - time / FadeSpeed;
+            alpha = 1.0f - time / FadeInSpeed;
             FadeImage.color = new Color(0, 0, 0, alpha);
             if (alpha < 0)
             {
@@ -52,7 +53,7 @@ public class ChangeColorRGBA4 : MonoBehaviour
         if (_isFadeout)
         {
             time += Time.deltaTime;
-            alpha = time / FadeSpeed;
+            alpha = time / FadeOutSpeed;
             FadeImage.color = new Color(0, 0, 0, alpha);
             if (alpha > 1)
             {
