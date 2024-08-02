@@ -1663,7 +1663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed99022de78ac474d9993795655eb474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 100
+  strength: 1
   speed: 0.07
   AddSpeed: 1
 --- !u!114 &1368897903
@@ -2513,7 +2513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135b9da370316af46b5fd5437cfdca36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrierHp: 1000
+  barrierHp: 10
 --- !u!1 &1815831073
 GameObject:
   m_ObjectHideFlags: 0
