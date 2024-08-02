@@ -451,11 +451,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4314332880794839739, guid: bdb7cc470420e174593b95970e1d963f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8204715895126470887, guid: bdb7cc470420e174593b95970e1d963f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -763,6 +763,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2203242871606743942, guid: 703ba5233f372614a8daf6a5aa628fd0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3859088554771543615, guid: 703ba5233f372614a8daf6a5aa628fd0, type: 3}
       propertyPath: m_LocalScale.x
       value: -3.6159356
@@ -810,6 +814,10 @@ PrefabInstance:
     - target: {fileID: 3859088554771543615, guid: 703ba5233f372614a8daf6a5aa628fd0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5125301925282571047, guid: 703ba5233f372614a8daf6a5aa628fd0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5709772539777840444, guid: 703ba5233f372614a8daf6a5aa628fd0, type: 3}
       propertyPath: m_BodyType
@@ -1735,7 +1743,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.853644, y: -0.52851903, z: 0}
-  m_LocalScale: {x: 0, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2051,8 +2059,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -2159,11 +2167,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6416220140007729442, guid: 579fb9b77b0bb3147bc18900193ddb9b, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7089050262417841558, guid: 579fb9b77b0bb3147bc18900193ddb9b, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7159642739119810788, guid: 579fb9b77b0bb3147bc18900193ddb9b, type: 3}
       propertyPath: m_Name

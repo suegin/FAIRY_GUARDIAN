@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class EnemyHp2 : MonoBehaviour
 {
-    public int enemyHp = 5;
+    public float enemyHp = 5;
 
     private int damageCoolTime = 0;
 
@@ -14,10 +14,14 @@ public class EnemyHp2 : MonoBehaviour
 
     GameObject bullet;
 
+    PlayerController damage;
+
     // Start is called before the first frame update
     void Start()
     {
         expBarScript = GameObject.Find("exp").GetComponent<ExpBarScript>();
+
+        damage = GameObject.Find("player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -38,7 +42,7 @@ public class EnemyHp2 : MonoBehaviour
             damageCoolTime++;
             if (damageCoolTime < 2)
             {
-                enemyHp -= 1;
+                enemyHp -= damage.strength;
             }
             else if (damageCoolTime > 4)
             {
