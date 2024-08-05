@@ -115,8 +115,8 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            barrierDirector.barrierHp += 5;     // バリアのHp回復
-            Debug.Log(barrierDirector.barrierHp);
+            BarrierDirector.barrierHp += 5;     // バリアのHp回復
+            Debug.Log(BarrierDirector.barrierHp);
         }
     }
    
