@@ -91,7 +91,7 @@ public class EnhanceScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.S) && Enhance.enhance > 0)
             {
                 // ƒoƒŠƒA‚Ì‘Ï‹v’l‚ð3‰ñ•œ
-                Hp.barrierHp += 3;
+                BarrierDirector.barrierHp += 3;
                 Enhance.enhance -= 1;
             }
 

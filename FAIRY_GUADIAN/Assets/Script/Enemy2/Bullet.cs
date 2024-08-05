@@ -70,8 +70,8 @@ public class Bullet : MonoBehaviour
 
             if (damageCoolTime < 2)
             {
-                Hp.barrierHp = Hp.barrierHp - damage;
-                Debug.Log(Hp.barrierHp);
+                BarrierDirector.barrierHp = BarrierDirector.barrierHp - damage;
+                Debug.Log(BarrierDirector.barrierHp);
             }
             else if (damageCoolTime > 25)
             {
