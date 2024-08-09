@@ -38,11 +38,6 @@ public class EnhanceScript : MonoBehaviour
 
         Hp = GameObject.Find("barrier").GetComponent<BarrierDirector>();
 
-        eSpeed1 = GameObject.Find("Enemy1").GetComponent<Enemy1>();
-        eSpeed2 = GameObject.Find("Enemy2").GetComponent<Enemy2>();
-        eSpeed3 = GameObject.Find("Enemy3").GetComponent<Enemy3>();
-        eSpeed4 = GameObject.Find("Enemy4").GetComponent<Enemy4>();
-
         attackTemp = pAttack.strength;
         speedTemp = pSpeed.speed;
         speedTemp2 = pSpeed.AddSpeed;
@@ -60,11 +55,6 @@ public class EnhanceScript : MonoBehaviour
         // 左シフトが押されてる間
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            // 敵の動きが止まる
-            eSpeed1.speed = 0.0f;
-            eSpeed2.speed = 0.0f;
-            eSpeed3.speed = 0.0f;
-            eSpeed4.speed = 0.0f;
             // 強化画面を表示
             transform.position = new Vector3(0, 0, 0);
             // プレイヤーの攻撃力を0にする
@@ -78,6 +68,8 @@ public class EnhanceScript : MonoBehaviour
             spawn = false;
 
             barrierDamage = false;
+
+            Debug.Log(eSpeed1.speed);
 
             // Aが押されたら
             if (Input.GetKeyDown(KeyCode.A) && Enhance.enhance > 0)
@@ -110,11 +102,7 @@ public class EnhanceScript : MonoBehaviour
         {
             // 強化画面を閉じる
             transform.position = new Vector3(0, 30, 0);
-            // 敵の動きを再開する
-            eSpeed1.speed += 0.005f;
-            eSpeed2.speed += 0.005f;
-            eSpeed3.speed += 0.005f;
-            eSpeed4.speed += 0.005f;
+
             // プレイヤーの攻撃力を元に戻す
             pAttack.strength = attackTemp;
             // プレイヤーの動きを再開する

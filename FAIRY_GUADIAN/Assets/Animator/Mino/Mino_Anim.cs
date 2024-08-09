@@ -9,7 +9,7 @@ public class Mino_Anim : MonoBehaviour
     GameObject Barrier;
     GameObject Fairy;
     private int count = 0;
-    float speed = 0.01f;
+    public float speed = 0.005f;
     private Animator animator;
     private string Attack = "Attack";
     private string Walk = "Walk";
@@ -47,6 +47,16 @@ public class Mino_Anim : MonoBehaviour
         else
         {
             //animator.SetTrigger(Attack);
+        }
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = 0;
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed = 0.005f;
         }
     }
     public void OnTriggerStay2D(Collider2D Collider)

@@ -17,7 +17,7 @@ public class Enemy1 : MonoBehaviour
     void Start()
     {
         Barrier = GameObject.Find("Barrier");
-     Fairy = GameObject.Find("Fairy");
+        Fairy = GameObject.Find("Fairy");
 
     }
 
@@ -37,6 +37,7 @@ public class Enemy1 : MonoBehaviour
 
         // Debug.Log(Player.transform.position);
 
+        
         if (Input.GetKey(KeyCode.LeftShift))
         {
             speed = 0;
@@ -46,6 +47,7 @@ public class Enemy1 : MonoBehaviour
         {
             speed = 0.005f;
         }
+        
 
     }
 

@@ -22,7 +22,7 @@ public class StageSelectDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ChangeColorRGBA2 != null & Input.GetKeyUp(KeyCode.Q) & keyLimit)
+        if (ChangeColorRGBA2 != null & Input.GetKeyUp(KeyCode.Return) & keyLimit)
         {
             keyLimit = false;
             audioSource.Play();
