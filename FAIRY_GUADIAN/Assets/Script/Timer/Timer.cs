@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Text))]
 public class Timer : MonoBehaviour
 {
-    public const float m_fStartTime = 300;
+    public const float m_fStartTime = 100;
     public string m_strFormat;
     public GameTimer m_gameTimer;
     public static int fShowTime_Second;
@@ -26,9 +26,15 @@ public class Timer : MonoBehaviour
         fShowTime_Minits = (int)(m_fStartTime - m_gameTimer.CurrentTime) / 60;
 
         m_txt.text = string.Format(m_strFormat, fShowTime_Minits.ToString() + ":" + fShowTime_Second.ToString());
-        if (fShowTime_Minits <= 0 & fShowTime_Second <= 0)
+    }
+
+    public bool is_timeOver()
+    {
+        // §ŒÀŽžŠÔ‚ª‰ß‚¬‚½‚Æ‚«‚ÉŽÀs
+        if (m_fStartTime - m_gameTimer.CurrentTime < 0)
         {
-            SceneManager.LoadScene("Clear Scene");
+            return true;
         }
+        return false;
     }
 }

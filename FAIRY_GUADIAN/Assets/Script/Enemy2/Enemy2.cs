@@ -59,7 +59,7 @@ public class Enemy2 : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            speed = 0.005f;
+            speed = 0.001f;
         }
     }
 

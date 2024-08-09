@@ -42,7 +42,13 @@ public class Bullet : MonoBehaviour
         float y = Fairy.transform.position.y - transform.position.y;
         y = y / a * speed;
 
+        float rotation = Mathf.Atan2(y, x) * Mathf.PI;
+
         transform.position += new Vector3(x, y, 0);
+
+        this.transform.rotation = new Quaternion(0,0,rotation,0);
+
+        //Debug.Log(rotation);
 
         if (Input.GetKey(KeyCode.LeftShift))
         {

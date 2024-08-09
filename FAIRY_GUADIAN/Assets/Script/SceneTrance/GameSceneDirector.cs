@@ -1,3 +1,4 @@
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,25 +8,42 @@ public class GameSceneDirector : MonoBehaviour
 {
     ChangeColorRGBA3 ChangeColorRGBA3;
     private Image FadeImage;
+    bool is_loadClear = false;
+    bool is_loadOver = false;
+    Timer timer;
     void Start()
     {
         FadeImage = GetComponent<Image>();
         ChangeColorRGBA3 = GetComponent<ChangeColorRGBA3>();
+        timer = GameObject.Find("GameTimer").gameObject.GetComponent<Timer>();
+        Debug.Log(timer);
     }
     void Update()
     {
 
-        if (Timer.fShowTime_Minits <= 0 & Timer.fShowTime_Second <= 0)
+        if (timer.is_timeOver())
         {   
+            is_loadClear = true;
             ChangeColorRGBA3.FadeoutOn();
-            ChangeColorRGBA3.Update();
         }
 
-        // バリアが壊れたらシーン遷移を書く
-
+        if (BarrierDirector.barrierHp <= 0)
+        {
+            is_loadOver = true;
+        }
     }
+
     public void LoadNextScene()
     {
-        SceneManager.LoadScene("StageSelectScene");
+        if (is_loadClear)
+        {   
+            is_loadClear = false;
+            SceneManager.LoadScene("ClearScene");
+        }
+        if (is_loadOver)
+        {
+            is_loadOver = false;
+            SceneManager.LoadScene("GameOverScene");
+        }
     }
 }

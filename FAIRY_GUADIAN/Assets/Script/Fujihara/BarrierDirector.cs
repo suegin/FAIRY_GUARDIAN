@@ -17,6 +17,8 @@ public class BarrierDirector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        barrierHp = 10;
+
         Enemy = GameObject.Find("enemy");
 
         Damage = GameObject.Find("Enhance").GetComponent<EnhanceScript>();
@@ -25,12 +27,7 @@ public class BarrierDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // ‘Ï‹v’l‚ª‚È‚­‚È‚Á‚½‚ç
-        if (barrierHp <= 0)
-        {
-            Destroy(gameObject);
-            SceneManager.LoadScene("GameOverScene");
-        }
+        
     }
 
     // Enemy‚ÆÚG‚µ‚Ä‚¢‚éŠÔ
@@ -47,6 +44,7 @@ public class BarrierDirector : MonoBehaviour
                 if (damageCoolTime < 2)
                 {
                     barrierHp = barrierHp - damage;
+                   // Debug.Log(barrierHp);
                 }
                 else if (damageCoolTime > 25)
                 {

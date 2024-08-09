@@ -9,7 +9,7 @@ public class Fire_Anim : MonoBehaviour
     GameObject Barrier;
     GameObject Fairy;
     private int count = 0;
-    float speed = 0.01f;
+    public float speed = 0.01f;
     private Animator animator;
     private string Attack = "Attack";
     private string Walk = "Walk";
@@ -53,7 +53,6 @@ public class Fire_Anim : MonoBehaviour
             if (shot.shot)
             {
                 Shot();
-                Debug.Log("‚ ");
             }
         }
         if (Input.GetKey(KeyCode.LeftShift))
@@ -63,7 +62,7 @@ public class Fire_Anim : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            speed = 0.005f;
+            speed = 0.01f;
         }
     }
     public void OnTriggerStay2D(Collider2D Collider)

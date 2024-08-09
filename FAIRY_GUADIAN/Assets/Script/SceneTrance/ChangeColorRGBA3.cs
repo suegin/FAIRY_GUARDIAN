@@ -21,7 +21,7 @@ public class ChangeColorRGBA3 : MonoBehaviour
         FadeImage = GetComponent<Image>();
         alpha = FadeImage.color.a;
         GameSceneDirector = GetComponent<GameSceneDirector>();
-        FadeImage.color = new Color(255, 255, 255, 255);
+        FadeImage.color = new Color(0, 0, 0, 0);
         FadeinOn();
     }
 
@@ -44,10 +44,11 @@ public class ChangeColorRGBA3 : MonoBehaviour
 
         if (_isFadeout)
         {
-            time += Time.deltaTime;
-            alpha = time / FadeOutSpeed;
+            time -= Time.deltaTime;
+            alpha = 1.0f - time / FadeOutSpeed;
+            Debug.Log(alpha);
             FadeImage.color = new Color(255, 255, 255, alpha);
-            if (alpha > 1)
+            if (alpha >= 1)
             {
                 //FadeImage.enabled = false;
                 _isFadeout = false;
@@ -60,6 +61,7 @@ public class ChangeColorRGBA3 : MonoBehaviour
     {
         FadeImage.enabled = true;
         time = 0;
+        alpha = 0;
         _isFadeout = true;
 
     }
