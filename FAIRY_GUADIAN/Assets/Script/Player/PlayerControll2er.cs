@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(-speed * AddSpeed, 0, 0); // 左に1動かす
-            scale.x = -0.3f; // 反転する（左向き）
+            scale.x = -4.0f; // 反転する（左向き）
 
             animator.SetBool("Run", true);
         }
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {   
             transform.Translate(speed * AddSpeed, 0, 0); // 右に1動かす
-            scale.x = 0.3f; // そのまま（右向き）
+            scale.x = 4.0f; // そのまま（右向き）
 
             animator.SetBool("Run", true);
         }
