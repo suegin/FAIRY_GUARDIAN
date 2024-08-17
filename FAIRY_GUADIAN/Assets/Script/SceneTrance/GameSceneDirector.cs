@@ -29,7 +29,7 @@ public class GameSceneDirector : MonoBehaviour
 
         if (BarrierDirector.barrierHp <= 0)
         {
-            is_loadOver = true;
+            SceneManager.LoadScene("GameOverScene");
         }
     }
 
@@ -39,11 +39,6 @@ public class GameSceneDirector : MonoBehaviour
         {   
             is_loadClear = false;
             SceneManager.LoadScene("ClearScene");
-        }
-        if (is_loadOver)
-        {
-            is_loadOver = false;
-            SceneManager.LoadScene("GameOverScene");
         }
     }
 }
