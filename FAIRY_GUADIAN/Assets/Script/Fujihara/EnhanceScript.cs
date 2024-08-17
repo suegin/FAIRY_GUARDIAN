@@ -69,8 +69,6 @@ public class EnhanceScript : MonoBehaviour
 
             barrierDamage = false;
 
-            Debug.Log(eSpeed1.speed);
-
             // A‚ª‰Ÿ‚³‚ê‚½‚ç
             if (Input.GetKeyDown(KeyCode.A) && Enhance.enhance > 0)
             {
