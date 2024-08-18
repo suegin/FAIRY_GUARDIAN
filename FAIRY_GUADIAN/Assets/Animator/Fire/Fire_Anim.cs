@@ -11,7 +11,7 @@ public class Fire_Anim : MonoBehaviour
     private int count = 0;
     public float speed = 0.01f;
     private Animator animator;
-    private string Attack = "Attack";
+    //private string Attack = "Attack";
     private string Walk = "Walk";
     public int enemyHp = 7;
     private int damageCoolTime = 0;
@@ -73,7 +73,6 @@ public class Fire_Anim : MonoBehaviour
             if (damageCoolTime < 2)
             {
                 enemyHp -= 1;
-                Debug.Log(enemyHp);
                 // HIT.enabled = false;    // Box Collider2D‚ð–³Œø‚É‚·‚é
             }
             else if (damageCoolTime > 4)

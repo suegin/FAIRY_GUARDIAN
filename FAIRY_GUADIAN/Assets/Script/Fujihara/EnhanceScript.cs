@@ -27,6 +27,9 @@ public class EnhanceScript : MonoBehaviour
 
     public bool barrierDamage;
 
+    AudioSource audioSource;
+    public AudioClip enhanceSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +40,9 @@ public class EnhanceScript : MonoBehaviour
         Enhance = GameObject.Find("exp").GetComponent<ExpBarScript>();
 
         Hp = GameObject.Find("barrier").GetComponent<BarrierDirector>();
+
+        audioSource = this.GetComponent<AudioSource>();
+        audioSource.clip = enhanceSound;
 
         attackTemp = pAttack.strength;
         speedTemp = pSpeed.speed;
@@ -75,6 +81,8 @@ public class EnhanceScript : MonoBehaviour
                 // UŒ‚—Í‚ğ0.5ã‚°‚é
                 attackTemp += 0.5f;
                 Enhance.enhance -= 1;
+
+                audioSource.Play();
             }
 
             // S‚ª‰Ÿ‚³‚ê‚½‚ç
@@ -83,6 +91,8 @@ public class EnhanceScript : MonoBehaviour
                 // ƒoƒŠƒA‚Ì‘Ï‹v’l‚ğ3‰ñ•œ
                 BarrierDirector.barrierHp += 3;
                 Enhance.enhance -= 1;
+
+                audioSource.Play();
             }
 
             // D‚ª‰Ÿ‚³‚ê‚½‚ç
@@ -92,6 +102,8 @@ public class EnhanceScript : MonoBehaviour
                 speedTemp += 0.002f;
                 speedTemp2 += 0.12f;
                 Enhance.enhance -= 1;
+
+                audioSource.Play();
             }
         }
 

@@ -16,7 +16,6 @@ public class GameSceneDirector : MonoBehaviour
         FadeImage = GetComponent<Image>();
         ChangeColorRGBA3 = GetComponent<ChangeColorRGBA3>();
         timer = GameObject.Find("GameTimer").gameObject.GetComponent<Timer>();
-        Debug.Log(timer);
     }
     void Update()
     {

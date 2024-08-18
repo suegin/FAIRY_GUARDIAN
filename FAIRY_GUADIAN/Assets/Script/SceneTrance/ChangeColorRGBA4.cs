@@ -40,6 +40,7 @@ public class ChangeColorRGBA4 : MonoBehaviour
         // _isFadein‚ªtrue‚É‚µ‚½‚ç
         if (_isFadein)
         {
+            GameOverDirector.keyLimit = false;
             time += Time.deltaTime;
             alpha = 1.0f - time / FadeInSpeed;
             FadeImage.color = new Color(0, 0, 0, alpha);
@@ -47,6 +48,7 @@ public class ChangeColorRGBA4 : MonoBehaviour
             {
                 FadeImage.enabled = false;
                 _isFadein = false;
+                GameOverDirector.keyLimit = true;
             }
         }
 
