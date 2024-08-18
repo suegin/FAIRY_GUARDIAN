@@ -10,7 +10,7 @@ public class GameOverDirector : MonoBehaviour
     private bool _isLoadStage = false;
     AudioSource audioSource;
     public AudioClip keySound;
-    bool keyLimit;
+    public static bool keyLimit;
     void Start()
     {
         FadeImage = GetComponent<Image>();

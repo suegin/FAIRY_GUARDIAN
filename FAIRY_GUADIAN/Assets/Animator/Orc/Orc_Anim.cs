@@ -69,7 +69,6 @@ public class Orc_Anim : MonoBehaviour
             if (damageCoolTime < 2)
             {
                 enemyHp -= 1;
-                Debug.Log(enemyHp);
                 // HIT.enabled = false;    // Box Collider2D‚ð–³Œø‚É‚·‚é
             }
             else if (damageCoolTime > 4)
