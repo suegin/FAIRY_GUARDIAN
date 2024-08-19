@@ -54,11 +54,6 @@ public class Generator2 : MonoBehaviour
                         px = Random.Range(-12, 12);
                     }
                     go.transform.localScale = new Vector3(10, 10, 10);
-                    // 真ん中より右だったら画像反転
-                    if (0 < px)
-                    {
-                        go.transform.localScale = new Vector3(-10, 10, 10);
-                    }
 
                     //出現位置の設定
                     go.transform.position = new Vector3(px, py, 0);
