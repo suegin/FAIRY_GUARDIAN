@@ -12,11 +12,6 @@ public class EnhanceScript : MonoBehaviour
 
     BarrierDirector Hp;
 
-    Enemy1 eSpeed1;
-    Enemy2 eSpeed2;
-    Enemy3 eSpeed3;
-    Enemy4 eSpeed4;
-
     float attackTemp;
     float speedTemp;
     float speedTemp2;

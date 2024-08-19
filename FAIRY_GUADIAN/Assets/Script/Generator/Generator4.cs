@@ -8,7 +8,7 @@ public class Generator4 : MonoBehaviour
 
     int ExistEnemyNum = 0;
 
-    const int StageTime = 300;
+    const int StageTime = 100;
 
     int EnemySpan = 0;
     public GameObject enemy;
