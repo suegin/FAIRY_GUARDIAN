@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Text))]
 public class Timer : MonoBehaviour
 {
-    public const float m_fStartTime = 100;
+    public const float m_fStartTime = 90;
     public string m_strFormat;
     public GameTimer m_gameTimer;
     public static int fShowTime_Second;

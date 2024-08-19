@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     BarrierDirector barrierDirector;
     BoxCollider2D boxCol;
     private float sizeCount =1.0f;  // 当たり判定の大きさ
+    int frameCount;
 
     Animator animator;
 
@@ -29,10 +30,34 @@ public class PlayerController : MonoBehaviour
         boxCol = GetComponent<BoxCollider2D>();
 
         animator = GetComponent<Animator>();
+
+        frameCount = 0;
     }
 
     // Update is called once per frame
     void Update()
+    {
+        // Qが押された時
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (count < 5)       // 5回まで
+            {
+                AddSpeed += 1.2f;      // 速度が1.2上がる
+                count++;
+            }
+        }
+
+        if (count < 5)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                BarrierDirector.barrierHp += 5;     // バリアのHp回復
+                Debug.Log(BarrierDirector.barrierHp);
+            }
+        }
+    }
+
+    private void FixedUpdate()
     {
         float x = Input.GetAxisRaw("Horizontal"); // デフォルトが右向きの画像の場合
         Vector3 scale = transform.localScale; // スケール値取り出し
@@ -54,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
         // →が押された時
         if (Input.GetKey(KeyCode.RightArrow))
-        {   
+        {
             transform.Translate(speed * AddSpeed, 0, 0); // 右に1動かす
             scale.x = 4.0f; // そのまま（右向き）
 
@@ -98,28 +123,7 @@ public class PlayerController : MonoBehaviour
         playerPos.x = Mathf.Clamp(playerPos.x, -xLimit, xLimit);    // 横の範囲制限
         playerPos.y = Mathf.Clamp(playerPos.y, -4.7f, yLimit);      // 縦の範囲制限
         transform.position = playerPos;
-
-        // Qが押された時
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if(count < 5)       // 5回まで
-            {
-                Debug.Log(sizeCount);
-                strength += 5;     // 攻撃力が5上がる
-                AddSpeed += 1.2f;      // 速度が1.2上がる
-                sizeCount += 0.5f;  // 当たり判定が0.5大きくなる
-                count++;
-                boxCol.size = new Vector2(sizeCount, sizeCount);
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            BarrierDirector.barrierHp += 5;     // バリアのHp回復
-            Debug.Log(BarrierDirector.barrierHp);
-        }
     }
-   
 }
 
 

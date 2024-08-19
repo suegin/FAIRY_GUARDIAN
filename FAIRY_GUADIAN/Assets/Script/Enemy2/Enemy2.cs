@@ -30,27 +30,6 @@ public class Enemy2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float b = Fairy.transform.position.x - transform.position.x;
-        float c = (Fairy.transform.position.y - transform.position.y);
-
-        float dis = (b * b + c * c);
-        float a = Mathf.Sqrt(dis);
-        float x = Fairy.transform.position.x - transform.position.x;
-        x = x / a * speed;
-        float y = Fairy.transform.position.y - transform.position.y;
-        y = y / a * speed;
-        if(a >= 5)
-        {
-            transform.position += new Vector3(x, y, transform.position.z);
-        }
-        else
-        {
-            if (shot.shot)
-            {
-                Shot();
-            }
-            
-        }
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -60,6 +39,32 @@ public class Enemy2 : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed = 0.001f;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+
+        float b = Fairy.transform.position.x - transform.position.x;
+        float c = (Fairy.transform.position.y - transform.position.y);
+
+        float dis = (b * b + c * c);
+        float a = Mathf.Sqrt(dis);
+        float x = Fairy.transform.position.x - transform.position.x;
+        x = x / a * speed;
+        float y = Fairy.transform.position.y - transform.position.y;
+        y = y / a * speed;
+        if (a >= 5)
+        {
+            transform.position += new Vector3(x, y, transform.position.z);
+        }
+        else
+        {
+            if (shot.shot)
+            {
+                Shot();
+            }
+
         }
     }
 
